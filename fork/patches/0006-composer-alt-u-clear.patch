@@ -1,0 +1,20 @@
+Modified by the fork maintainer: Alt+U clears the whole composer draft.
+
+diff --git a/codex-rs/tui/src/bottom_pane/chat_composer.rs b/codex-rs/tui/src/bottom_pane/chat_composer.rs
+--- a/codex-rs/tui/src/bottom_pane/chat_composer.rs
++++ b/codex-rs/tui/src/bottom_pane/chat_composer.rs
+@@ -2042,6 +2042,14 @@
+     }
+ 
+     fn handle_key_event_inner(&mut self, key_event: KeyEvent) -> (InputResult, bool) {
++        // Modified by the fork maintainer: clear the entire draft without interrupting a turn.
++        // Reuse cancellation's complete draft/history handling, including buffered paste and images.
++        if key_hint::alt(KeyCode::Char('u')).is_press(key_event) {
++            self.clear_for_ctrl_c();
++            self.footer.mode = reset_mode_after_activity(self.footer.mode);
++            return (InputResult::None, true);
++        }
++
+         if self.history_search.is_none()
+             && !self.popups.active()
+             && self.draft.textarea.wants_vim_search_key(key_event)

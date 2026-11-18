@@ -1,0 +1,118 @@
+Modified by the fork maintainer: Alt+U clears the whole composer draft.
+
+diff --git a/codex-rs/tui/src/bottom_pane/chat_composer.rs b/codex-rs/tui/src/bottom_pane/chat_composer.rs
+--- a/codex-rs/tui/src/bottom_pane/chat_composer.rs
++++ b/codex-rs/tui/src/bottom_pane/chat_composer.rs
+@@ -6402,6 +6402,112 @@
+         assert_eq!(composer.footer_mode(), FooterMode::ComposerEmpty);
+     }
+ 
++    // Modified by the fork maintainer: whole-draft clear is distinct from line kill.
++    #[test]
++    fn alt_u_clears_multiline_at_any_cursor_and_keeps_ctrl_u() {
++        let text = "first\nβeta\nlast";
++        let (mut composer, mut rx) = new_test_composer();
++        for cursor in [0, "first\nβ".len(), text.len()] {
++            composer.set_text_content(text.to_string(), Vec::new(), Vec::new());
++            composer.draft.textarea.set_cursor(cursor);
++            let (result, redraw) =
++                composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++            assert!(matches!(result, InputResult::None));
++            assert!(redraw);
++            assert!(composer.is_empty());
++            assert_eq!(composer.current_cursor(), 0);
++            assert!(
++                rx.try_recv().is_err(),
++                "clearing must not send or interrupt a turn"
++            );
++        }
++        composer.set_text_content(text.to_string(), Vec::new(), Vec::new());
++        composer.draft.textarea.set_cursor("first\nβeta".len());
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::CONTROL));
++        assert_eq!(composer.current_text(), "first\n\nlast");
++    }
++
++    #[test]
++    fn alt_u_clears_pending_paste_images_and_restores_draft_from_history() {
++        let (mut composer, _rx) = new_test_composer();
++        let large = "x".repeat(LARGE_PASTE_CHAR_THRESHOLD + 5);
++        let image = PathBuf::from("example.png");
++        let remote = "https://example.com/remote.png".to_string();
++        composer.handle_paste(large.clone());
++        composer.attach_image(image.clone());
++        composer.set_remote_image_urls(vec![remote.clone()]);
++        let before = composer.current_text();
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        assert!(composer.is_empty());
++        assert!(composer.draft.pending_pastes.is_empty());
++        assert!(composer.draft.textarea.text_elements().is_empty());
++        assert!(composer.local_image_paths().is_empty());
++        assert!(composer.attachments.remote_image_urls().is_empty());
++        let entry = composer
++            .history
++            .navigate_up(&composer.app_event_tx)
++            .unwrap();
++        assert_eq!(entry.text, before);
++        assert_eq!(entry.local_image_paths, vec![image.clone()]);
++        assert_eq!(entry.remote_image_urls, vec![remote.clone()]);
++        assert_eq!(entry.pending_pastes[0].1, large);
++        composer.apply_history_entry(entry);
++        assert_eq!(composer.current_text(), before);
++        assert_eq!(composer.local_image_paths(), vec![image]);
++        assert_eq!(composer.attachments.remote_image_urls(), vec![remote]);
++    }
++
++    #[test]
++    fn alt_u_flushes_held_typing_and_dismisses_popup() {
++        let (mut composer, _rx) = new_test_composer();
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('x'), KeyModifiers::NONE));
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        assert!(composer.is_empty());
++        std::thread::sleep(ChatComposer::recommended_paste_flush_delay());
++        composer.flush_paste_burst_if_due();
++        assert!(composer.is_empty(), "buffered input must not reappear");
++        assert_eq!(
++            composer
++                .history
++                .navigate_up(&composer.app_event_tx)
++                .unwrap()
++                .text,
++            "x"
++        );
++        composer.set_text_content("/mod".to_string(), Vec::new(), Vec::new());
++        composer.draft.textarea.set_cursor(4);
++        composer.sync_popups();
++        assert!(composer.popups.active());
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        assert!(composer.is_empty());
++        assert!(!composer.popup_active());
++    }
++
++    #[test]
++    fn alt_u_respects_disabled_and_release_events_and_empty_draft() {
++        let (mut composer, _rx) = new_test_composer();
++        composer.set_text_content("keep".to_string(), Vec::new(), Vec::new());
++        let mut release = KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT);
++        release.kind = KeyEventKind::Release;
++        composer.handle_key_event(release);
++        assert_eq!(composer.current_text(), "keep");
++        composer.set_input_enabled(false, None);
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        assert_eq!(composer.current_text(), "keep");
++        composer.set_input_enabled(true, None);
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        composer.handle_key_event(KeyEvent::new(KeyCode::Char('u'), KeyModifiers::ALT));
++        assert!(composer.is_empty());
++        assert_eq!(
++            composer
++                .history
++                .navigate_up(&composer.app_event_tx)
++                .unwrap()
++                .text,
++            "keep"
++        );
++    }
++
+     #[test]
+     fn clear_for_ctrl_c_records_cleared_draft() {
+         let (tx, _rx) = unbounded_channel::<AppEvent>();

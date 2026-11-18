@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "fork": "codex",
-  "fork_version": "0.167.1-p2",
+  "fork_version": "0.167.1-p3",
   "upstream": {
     "repo": "openai/codex",
     "tag": "rust-v0.167.1",
@@ -19,9 +19,17 @@
     {
       "file": "0005-official-v8-without-sandbox.patch",
       "sha256": "cbb5e12d957cb26e68eedb6a13b7e2297df1cd2aef290730c4ddf6242a46500f"
+    },
+    {
+      "file": "0006-composer-alt-u-clear.patch",
+      "sha256": "780221fe8eabb8774ecf276edbb69dd35531f70c82205e0f95710dea3f5af43d"
+    },
+    {
+      "file": "0007-composer-alt-u-clear-tests.patch",
+      "sha256": "00205bf538f2378d2f7789974b6b817152d3afead63c4c1193b2a78a07a39c83"
     }
   ],
-  "patchset_sha256": "34ea7061eea3f991b9aaa9ea6177ce2d83a38d2272028b470334da064e736ab6",
+  "patchset_sha256": "0df4872fa87944f67f1c63e05a86615a8a10c2e62d6ae71c3992d49c7b93bee4",
   "toolchain": "1.95.0",
   "lockfile_sha256": "9efc26116852723f76540da85d9e4537979014f166c39494bef61e49a9cc0883",
   "production_ready": true,

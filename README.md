@@ -8,19 +8,20 @@ The historical source pin is rust-v0.167.1,
 0a94398fa60c4fac0e7659e4213a0a36e613dd46, Rust 1.95.0. The staged manifest
 pins the validated workspace lock and native assets; its exact-input rebuild
 passed locally. Current stable has not been queried
-by this offline repair. LICENSE/NOTICE in this kit remain P4 placeholders;
-release staging copies the actual notices from its admitted upstream source.
+by this offline repair. LICENSE/NOTICE are copied from the pinned upstream
+source; release staging copies and verifies the same admitted notices.
 
 Changed upstream files are pager_overlay.rs, transcript_view/input.rs,
 transcript_view/input_tests.rs, code-mode-runtime/Cargo.toml,
-code-mode-runtime/src/ui/mod.rs and code-mode-runtime/src/runtime/mod.rs.
+code-mode-runtime/src/ui/mod.rs, code-mode-runtime/src/runtime/mod.rs and
+bottom_pane/chat_composer.rs.
 Owner option B uses the official pointer-compressed V8 prebuilt without its heap
 sandbox; this weakens containment for V8 memory-corruption bugs. The manifest pins
 the source patch and both official native assets. Full-page movement is max(1, height * 2 / 5);
 half-page and line movement remain unchanged. 0001 is byte-identical to its
 original SHA256 555a8ab95a01cc2dc3bee177fb860499cf8b177d1552e611e21228dc6877e6e1.
-Historical genuine red/green C02 evidence is retained. Composer and Pi work are
-separate, deferred features. Terminal C03 and independent T3 remain separate
+Historical genuine red/green C02 evidence is retained. Composer-height changes
+and Pi work remain separate features. Terminal C03 and independent T3 remain separate
 acceptance gates; library probe fixtures cannot prove actual terminal motion.
 
 ## Local build and package
@@ -141,3 +142,20 @@ node fork/bin/forkctl.mjs publish --evidence OWNER_EVIDENCE.json
 ```
 
 It requires exact HEAD approval through commit-review, a fresh Linux container record bound to HEAD and the committed artifact hash, a matching remote tag, immutable releases enabled, unchanged draft assets/checksums/manifest, and the public-scope guard. It re-downloads draft assets before publication. No automatic approvals or bot pushes are enabled. GNU runtime prerequisites include libssl3t64, libbz2-1.0, zlib1g and libzstd1.
+
+
+### 0.167.1-p3: clear the composer with Alt+U
+
+Press **Alt+U** once to clear the whole chat composer, at any cursor position.
+This also clears attachments and pending paste payloads. The cleared draft stays
+in local input history for recovery with Up. It does not send a message or
+interrupt a running turn. Ctrl+U keeps its existing line-start deletion behavior.
+Terminals must deliver Alt+U (usually Escape followed by `u`); desktop shortcuts
+that intercept it take precedence.
+
+The patch queue adds `0006-composer-alt-u-clear.patch` and
+`0007-composer-alt-u-clear-tests.patch`, modifying
+`codex-rs/tui/src/bottom_pane/chat_composer.rs`. The local/CI build requires all
+four `alt_u_` behavior tests as well as the existing scroll tests. The maintenance
+kit also fixes draft lookup during publication by listing every releases page
+before selecting the exact tag. Publication guards remain required.

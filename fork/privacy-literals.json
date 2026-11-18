@@ -7,10 +7,10 @@
       "length": 24,
       "sha256": "7045819ba2c152df791972ca75da2d98edae0141c1fd11af02750213d1f1e36a",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "90011315e7b47fcabeec5732edd6a710dbb01f500996dc5b27ced91bd3f46adb"
+      "proofSha256": "dc374109e7ea60f6e50d05553e80223bbaaccea1c3e771e6c43af41002d38571"
     },
     {
       "kind": "tokenLike",
@@ -18,10 +18,10 @@
       "length": 25,
       "sha256": "76709299b805c2bc5621e479d417e3a23bc22afa42cf8c8b581d9ee868aec5e0",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "e11b2c174ebe27070c419895c772e90f6f21b0009016a165a506355a3ff6fc18"
+      "proofSha256": "4494e259972150de3db177595228fcf5f61801f5b07c293686accdcd1900fb2f"
     },
     {
       "kind": "tokenLike",
@@ -29,10 +29,10 @@
       "length": 48,
       "sha256": "0ab45ae4ab407cdef7656699ccdbd379e136f77b7e9bdf578b275f73503a20fd",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "fbfd00ba6b316cfc70a0bb6ed05c089984608605e2ed5daba18e30c0f5820a85"
+      "proofSha256": "a0084f2ab6f2c033e149d5a20da87b23fafe55aaf4ec1ca1af79d3e8eff2815f"
     },
     {
       "kind": "tokenLike",
@@ -40,10 +40,10 @@
       "length": 20,
       "sha256": "54a2efe17b6881a307ea35dace78ba3831dd09fad1ee6105f8da00d4a697a40d",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "c10aff9df7781ecb3f9517355fb3affd3b29ad871fd0242b253b80395229e6ec"
+      "proofSha256": "0bebc81f4d7c5218b65d98b466e39ed75592077a99ffc435ea1dff1fb58764b3"
     },
     {
       "kind": "tokenLike",
@@ -51,10 +51,10 @@
       "length": 20,
       "sha256": "4b5baa2bd6d4c85fed111f7182bb0696f6bb5c5a862c684ba277f45ac390c90f",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "7cc1b60f85abface90eef4e6f9cba035c95bef81da100c91b05a56efd902e4a6"
+      "proofSha256": "403aaf03eb9559d3d4194f5b7b6c3b189ccb70b068993ce9ceb48e8c59917a3a"
     },
     {
       "kind": "tokenLike",
@@ -62,10 +62,10 @@
       "length": 34,
       "sha256": "6d9c316bd899bf73f6c177c632d3530ea196726d20a4f6a411155137dcd80623",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "abd5b1d6038319f245248a7cdb5f835be34afc1529f87e7a270b3c9410a0ceb8"
+      "proofSha256": "6907b441aa083744c7a47915e7196fad5eb31f25c226ff1a2132129cee73c6da"
     },
     {
       "kind": "tokenLike",
@@ -73,10 +73,10 @@
       "length": 33,
       "sha256": "9c20f9fe8970acb4a0297c38aed0f501b9d2ba80acea6dc80795a773c72579b5",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "da768881798cc32b64fb343c528dcb2072e8a44a063641eacfe18d7ee522b99e"
+      "proofSha256": "c49fe22b382180647408d4d97c1e7004b1cde4e47498ff040e72a15d4474381c"
     },
     {
       "kind": "tokenLike",
@@ -84,10 +84,10 @@
       "length": 51,
       "sha256": "f51d02fb859198f974339e3abed8db2597ad6cc41a494c366179457bcdad6025",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "f274c378d58d64d2b99895e717ae0679248dc2c3d6626500f1016d498cfdca77"
+      "proofSha256": "e26741666a26d434fa8c1fbac5f8b5da2209a0efa9bbc9826a35219bcf573f53"
     },
     {
       "kind": "tokenLike",
@@ -95,10 +95,10 @@
       "length": 21,
       "sha256": "0905fbb0168ca8f1991d41a1369f592b9985466a11801f82dc72647377b56b3f",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "52e0cd8766a4c2a5b399ce688fb0b9a3684edd8b9789c018989a5c52d0494e66"
+      "proofSha256": "11676f552bb48b5ee394353231eb94b3f0ed6002a7455703aaa24f694c838419"
     },
     {
       "kind": "tokenLike",
@@ -106,10 +106,10 @@
       "length": 19,
       "sha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "b6096f2d7f66bd6cc1a1b3fc9caccb263de1801f0307ca15d2f10f4c0667173e"
+      "proofSha256": "fe49de5dba9974e1eac7c0ad5e22e929bbc8b683341308768410b7bc3f412e26"
     },
     {
       "kind": "ownerPattern",
@@ -118,10 +118,10 @@
       "length": 4,
       "sha256": "6b73babf56322cece5630e9cb20f51ca71e76905ea66ac98fff63223de2d343c",
       "file": "bin/codex",
-      "artifactSha256": "594e24b5683fd2e0fb3341dced1d04e200970b6e74a8f9c854b19d3580f85f33",
+      "artifactSha256": "fc3f38ae5939f7d0764fbea99f78a9d88183b5848049adb314309fdcbfbe1005",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "a0a7bad7fd8ace9fcd7f7a39d981bd4cfa296e6d044c22ec53f51928040f0dc2"
+      "proofSha256": "47f1bbeb8f0ae5981917159ef62e5ce6b5c73b974508c5719f564cbfccc97ce9"
     },
     {
       "kind": "tokenLike",
@@ -129,10 +129,10 @@
       "length": 56,
       "sha256": "35387683734f51497a1ce15777840b9320f3058f2a0db374acc56254a8e10c55",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "46100a3b55e8d30012697dec652483352e0224c870c39f0db9e84f021352e65f"
+      "proofSha256": "789ccebd5ba826dcc0cb725e6e0a8deb80d91e346ef99f78963550b0e1bdc20b"
     },
     {
       "kind": "tokenLike",
@@ -140,10 +140,10 @@
       "length": 48,
       "sha256": "6539ba536b9b56d931108d3ccf1eb85fd98aecd64329a6b7c6c27ccfbee20930",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "88c813fe114ab21f0b205701c2a5f5e1221d88479913cc01b2ceef028e757df3"
+      "proofSha256": "0b5f513c6a7dab1b3e9538aab33d74b31a9e857ce145af7ef722ed71d97c2b96"
     },
     {
       "kind": "tokenLike",
@@ -151,10 +151,10 @@
       "length": 48,
       "sha256": "3bcb48cc71bc30f4b2cbe84c1bbf04e002dcc593725fead5587caaed0dd85eff",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "80f89652ee755e18eff20fb1ccfff3833b6c620e8ad24fff2e5d3bc2bcb72545"
+      "proofSha256": "fe19b35b9f6df7169d6ba5f422f09677a602691eb35dc1327abfef9c3dc5128a"
     },
     {
       "kind": "tokenLike",
@@ -162,10 +162,10 @@
       "length": 33,
       "sha256": "9c20f9fe8970acb4a0297c38aed0f501b9d2ba80acea6dc80795a773c72579b5",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "1e6c4ea4344f42499c593c2545eb5a1c9a9a7ef540fbe91f4f5cd52d71f9ea8d"
+      "proofSha256": "46700adee4f431ab1f2f70c7c729414f9e692a707d2552d86b5da896f0ee2f90"
     },
     {
       "kind": "tokenLike",
@@ -173,10 +173,10 @@
       "length": 51,
       "sha256": "f51d02fb859198f974339e3abed8db2597ad6cc41a494c366179457bcdad6025",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "ee4b1041f9152eae61a674870ab3f31b64dce5793276b419e4523700793915bf"
+      "proofSha256": "70a1c1adb463e25b0a4efcd976d0339d5b9e2e76d8790042f052d09f9d5a8dd7"
     },
     {
       "kind": "tokenLike",
@@ -184,10 +184,10 @@
       "length": 19,
       "sha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727",
       "file": "bin/codex-exec-server",
-      "artifactSha256": "1ef29383e10471dd8a93e85410f07e5e11da9f1b28f3a729ce6e342eba1dcbd4",
+      "artifactSha256": "4e369412bd3ec963eb3eb29b4ed80c17bfccdb430660e15798786722bff46e1f",
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
-      "proofSha256": "dc8206625deb53e843b4fe495ce64d73e571c765a9cd709e02fe550b1810823a"
+      "proofSha256": "6ed682dde5c93b651f1bbe9db8f874717e6f69f322c0d650bca94fb8b6055fc8"
     }
   ]
 }

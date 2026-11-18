@@ -12,3 +12,4 @@ import './github.test.mjs';
 import './ci.test.mjs';
 import './literal-policy.test.mjs';
 import './strip.test.mjs';
+import './publish.test.mjs';

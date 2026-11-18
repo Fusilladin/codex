@@ -23,6 +23,18 @@ export function completeScrollCoverage(output) {
   return requiredScrollTests.every(name => lines.filter(line => line.startsWith(`test ${name} ... `)).length === 1 && lines.includes(`test ${name} ... ok`)) &&
     /test result: ok\. 3 passed; 0 failed; 0 ignored;/.test(clean);
 }
+export const requiredAltUTests = [
+  'bottom_pane::chat_composer::tests::alt_u_clears_multiline_at_any_cursor_and_keeps_ctrl_u',
+  'bottom_pane::chat_composer::tests::alt_u_clears_pending_paste_images_and_restores_draft_from_history',
+  'bottom_pane::chat_composer::tests::alt_u_flushes_held_typing_and_dismisses_popup',
+  'bottom_pane::chat_composer::tests::alt_u_respects_disabled_and_release_events_and_empty_draft',
+];
+export function completeAltUCoverage(output) {
+  const clean = output.replace(/\x1b\[[0-?]*[ -/]*[@-~]/g, '').replace(/\r/g, '');
+  const lines = clean.split('\n').map(line => line.trim());
+  return requiredAltUTests.every(name => lines.filter(line => line.startsWith(`test ${name} ... `)).length === 1 && lines.includes(`test ${name} ... ok`)) &&
+    /test result: ok\. 4 passed; 0 failed; 0 ignored;/.test(clean);
+}
 const ok = r => r && !r.error && !r.signal && r.status === 0;
 const inside = (parent, child) => { const p = relative(parent, child); return p !== '' && !p.startsWith(`..${process.platform === 'win32' ? '\\' : '/'}`) && p !== '..' && !isAbsolute(p); };
 const drift = () => Object.assign(new Error('Unsupported or non-workspace lock drift'), { state: 'lock-drift', code: 22 });
@@ -284,6 +296,10 @@ export function buildCodex({ manifest: m, source, stateRoot: root, patchDir, loc
       }
       const tests = exec('scroll-tests', 'cargo', [`+${m.toolchain}`, 'test', '-p', 'codex-tui', '--locked', '--offline', '--target', m.target, '--jobs', String(jobs), 'scroll_40']);
       if (!tests.success || !completeScrollCoverage(tests.text)) return fail('test-failed');
+      if (m.patches.some(p => p.file === '0006-composer-alt-u-clear.patch')) {
+        const altU = exec('alt-u-tests', 'cargo', [`+${m.toolchain}`, 'test', '-p', 'codex-tui', '--locked', '--offline', '--target', m.target, '--jobs', String(jobs), 'alt_u_']);
+        if (!altU.success || !completeAltUCoverage(altU.text)) return fail('test-failed');
+      }
       if (JSON.stringify(sourceFingerprint(source)) !== JSON.stringify(expected) ||
           receipt.nativeArtifacts.some(a => !lstatSync(join(env.RUSTY_V8_ARCHIVE, a.name)).isFile() || sha256(readFileSync(join(env.RUSTY_V8_ARCHIVE, a.name))) !== a.sha256) ||
           receipt.artifacts.some(a => !lstatSync(a.path).isFile() || !(lstatSync(a.path).mode & 0o111) || sha256(readFileSync(a.path)) !== a.sha256 || sha256(readFileSync(a.buildPath)) !== a.sha256)) return fail('build-failed');

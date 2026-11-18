@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "repo": "Fusilladin/codex",
-  "tag": "fork-0.167.1-p2",
-  "artifact": "codex-0.167.1-p2-x86_64-unknown-linux-gnu.tar.gz",
-  "artifact_sha256": "6e977b16a28437e05071b8d76884d3a812e6ca80be6ae04ea652d38f87928d7b"
+  "tag": "fork-0.167.1-p3",
+  "artifact": "codex-0.167.1-p3-x86_64-unknown-linux-gnu.tar.gz",
+  "artifact_sha256": "c200a7cc8366723b9e7a424fe33bcfe2c83390bd7791693def0516e3f784d09d"
 }

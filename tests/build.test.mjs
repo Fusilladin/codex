@@ -6,7 +6,7 @@ import { spawnSync } from 'node:child_process';
 import { temp, manifest, patchDir } from './helpers.mjs';
 import { makeUpstream } from './support/make-upstream.mjs';
 import { prepare } from '../fork/lib/patches.mjs';
-import { buildCodex, parseLock, compareLocks } from '../fork/lib/build-codex.mjs';
+import { buildCodex, parseLock, compareLocks, completeAltUCoverage, requiredAltUTests } from '../fork/lib/build-codex.mjs';
 import { sha256, candidateKey } from '../fork/lib/manifest.mjs';
 import { readJSON, checkRelease, withLock, exits } from '../fork/lib/state.mjs';
 import { main } from '../fork/bin/forkctl.mjs';
@@ -310,5 +310,17 @@ test('build job selection reaches Cargo and refuses values above the owner ceili
   for (const call of r.calls) {
     assert.equal(call.env.CARGO_BUILD_JOBS, '16');
     if (call.args.includes('build') || call.args.includes('test')) assert.equal(call.args[call.args.indexOf('--jobs') + 1], '16');
+  }
+});
+
+
+test('Alt+U build coverage requires each behavior test once, passed and not filtered out', () => {
+  const passed = requiredAltUTests.map(name => `test ${name} ... ok`).join('\n');
+  const summary = '\ntest result: ok. 4 passed; 0 failed; 0 ignored; 123 filtered out;\n';
+  assert.equal(completeAltUCoverage(passed + summary), true);
+  assert.equal(completeAltUCoverage((passed + summary).replaceAll("ok", "\x1b[32mok\x1b[0m")), true);
+  for (const output of [summary, passed, passed.replace(requiredAltUTests[0], 'other') + summary,
+    passed.replace('... ok', '... FAILED') + summary, passed + '\n' + passed + summary]) {
+    assert.equal(completeAltUCoverage(output), false);
   }
 });
