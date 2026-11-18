@@ -1,0 +1,43 @@
+diff --git a/codex-rs/tui/src/pager_overlay.rs b/codex-rs/tui/src/pager_overlay.rs
+index 43fb410..92424e7 100644
+--- a/codex-rs/tui/src/pager_overlay.rs
++++ b/codex-rs/tui/src/pager_overlay.rs
+@@ -297,11 +297,11 @@ impl PagerView {
+                 self.scroll_offset = self.scroll_offset.saturating_add(1);
+             }
+             e if self.keymap.page_up.is_pressed(e) => {
+-                let page_height = self.page_height(tui.terminal.viewport_area);
++                let page_height = (self.page_height(tui.terminal.viewport_area) * 2 / 5).max(1);
+                 self.scroll_offset = self.scroll_offset.saturating_sub(page_height);
+             }
+             e if self.keymap.page_down.is_pressed(e) => {
+-                let page_height = self.page_height(tui.terminal.viewport_area);
++                let page_height = (self.page_height(tui.terminal.viewport_area) * 2 / 5).max(1);
+                 self.scroll_offset = self.scroll_offset.saturating_add(page_height);
+             }
+             e if self.keymap.half_page_down.is_pressed(e) => {
+diff --git a/codex-rs/tui/src/transcript_view/input.rs b/codex-rs/tui/src/transcript_view/input.rs
+index 59183c4..0fa3baa 100644
+--- a/codex-rs/tui/src/transcript_view/input.rs
++++ b/codex-rs/tui/src/transcript_view/input.rs
+@@ -133,8 +133,9 @@ impl TranscriptView {
+             self.jump_to_latest();
+             return true;
+         }
+-        let page = self.area.height.max(/*other*/ 1) as isize;
+-        let half = (page + 1) / 2;
++        let height = self.area.height.max(/*other*/ 1) as isize;
++        let page = (height * 2 / 5).max(1);
++        let half = (height + 1) / 2;
+         let delta = [
+             (&keymap.scroll_up, -1),
+             (&keymap.scroll_down, 1),
+@@ -474,7 +475,7 @@ impl TranscriptView {
+                 // Full pages retain the main view's existing one-row overlap.
+                 let keymap = &self.disclosure.keymap.pager;
+                 let height = self.area.height.max(/*other*/ 1) as isize;
+-                let page = (height - 1).max(/*other*/ 1);
++                let page = (height * 2 / 5).max(/*other*/ 1);
+                 let half = (height + 1) / 2;
+                 let delta = [
+                     (&keymap.scroll_up, -1),

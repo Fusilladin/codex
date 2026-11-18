@@ -1,0 +1,145 @@
+Modified by the fork maintainer: handler/state regression tests for 40% paging.
+
+diff --git a/codex-rs/tui/src/pager_overlay.rs b/codex-rs/tui/src/pager_overlay.rs
+--- a/codex-rs/tui/src/pager_overlay.rs
++++ b/codex-rs/tui/src/pager_overlay.rs
+@@ -525,6 +525,53 @@
+         )
+     }
+ 
++
++    // Modified by the fork maintainer: exercise actual pager input and render bounds.
++    #[tokio::test(flavor = "current_thread", start_paused = true)]
++    async fn scroll_40_static_pager_steps_and_bounds() {
++        use crossterm::event::KeyModifiers;
++
++        let mut tui = crate::tui::test_support::make_test_tui().expect("test tui");
++        // Content heights exclude the two chrome rows. Explicit expected values avoid
++        // reproducing the production fraction in a test-only arithmetic helper.
++        for (height, page, half) in [(1, 1, 1), (2, 1, 1), (3, 1, 2), (5, 2, 3), (24, 9, 12), (60, 24, 30)] {
++            let area = Rect::new(0, 0, 40, height + 2);
++            let mut buffer = Buffer::empty(area);
++            let mut view = pager_view(vec![paragraph_block("row ", 300)], "scroll", 100);
++            view.render(area, &mut buffer);
++            assert_eq!(view.page_height(tui.terminal.viewport_area), usize::from(height));
++            for (up, down, modifiers, step) in [
++                (KeyCode::PageUp, KeyCode::PageDown, KeyModifiers::NONE, page),
++                (KeyCode::Char('u'), KeyCode::Char('d'), KeyModifiers::CONTROL, half),
++                (KeyCode::Up, KeyCode::Down, KeyModifiers::NONE, 1),
++            ] {
++                let up = KeyEvent::new(up, modifiers);
++                let down = KeyEvent::new(down, modifiers);
++                view.scroll_offset = 100;
++                view.handle_key_event(&mut tui, up).expect("up");
++                assert_eq!(view.scroll_offset, 100 - step, "height {height}");
++                view.handle_key_event(&mut tui, down).expect("down");
++                assert_eq!(view.scroll_offset, 100);
++                view.handle_key_event(&mut tui, down).expect("down from middle");
++                assert_eq!(view.scroll_offset, 100 + step);
++                view.scroll_offset = 1;
++                view.handle_key_event(&mut tui, up).expect("top");
++                assert_eq!(view.scroll_offset, 0);
++                view.handle_key_event(&mut tui, up).expect("remain at top");
++                assert_eq!(view.scroll_offset, 0);
++                let bottom = 300 - usize::from(height);
++                view.scroll_offset = bottom - 1;
++                view.handle_key_event(&mut tui, down).expect("bottom");
++                // The handler saturates arithmetic; the real render clamps content bounds.
++                view.render(area, &mut buffer);
++                assert_eq!(view.scroll_offset, bottom);
++                view.handle_key_event(&mut tui, down).expect("remain at bottom");
++                view.render(area, &mut buffer);
++                assert_eq!(view.scroll_offset, bottom);
++            }
++        }
++    }
++
+     #[test]
+     fn footer_hints_display_chords_without_internal_dispatch_keys() {
+         use codex_config::types::KeybindingSpec;
+diff --git a/codex-rs/tui/src/transcript_view/input_tests.rs b/codex-rs/tui/src/transcript_view/input_tests.rs
+--- a/codex-rs/tui/src/transcript_view/input_tests.rs
++++ b/codex-rs/tui/src/transcript_view/input_tests.rs
+@@ -446,3 +446,82 @@
+         assert!(view.selection.is_none());
+     }
+ }
++
++
++// Modified by the fork maintainer: test both patched transcript input paths.
++// These assertions use actual retained-cell anchors after real handler dispatch.
++fn check_scroll_40_transcript_path(ordinary_input: bool) {
++    use crate::history_cell::PlainHistoryCell;
++
++    let cells: Vec<Arc<dyn HistoryCell>> = vec![Arc::new(PlainHistoryCell::new(
++        (0..300).map(|row| format!("row {row:03}").into()).collect(),
++    ))];
++    for (height, page, half) in [(1, 1, 1), (2, 1, 1), (3, 1, 2), (5, 2, 3), (24, 9, 12), (60, 24, 30)] {
++        let area = Rect::new(0, 0, 20, height);
++        let mut view = TranscriptView::default();
++        view.render(area, &mut Buffer::empty(area), &cells);
++        // Ordinary input deliberately admits only unmodified PageUp/PageDown.
++        // Remap those real bindings to verify unchanged line and half-page branches
++        // without inventing extra keyboard routes that the handler does not accept.
++        for (action, step) in [("page", page), ("half", half), ("line", 1)] {
++            let mut keymap = crate::keymap::RuntimeKeymap::defaults().pager;
++            if action != "page" {
++                let up = std::mem::take(&mut keymap.page_up);
++                let down = std::mem::take(&mut keymap.page_down);
++                if action == "half" {
++                    keymap.half_page_up = up;
++                    keymap.half_page_down = down;
++                } else {
++                    keymap.scroll_up = up;
++                    keymap.scroll_down = down;
++                }
++            }
++            view.disclosure.keymap.pager = keymap.clone();
++            let dispatch = |view: &mut TranscriptView, code| {
++                let key = KeyEvent::new(code, KeyModifiers::NONE);
++                if ordinary_input {
++                    assert!(matches!(view.handle_scroll_key(key, &cells), Some(ViewAction::Changed)));
++                } else {
++                    assert!(view.navigate_pager(key, &cells, &keymap));
++                }
++            };
++            view.jump_to_beginning(&cells);
++            view.scroll(&cells, 100);
++            assert_eq!(view.start(&cells), (0, 100));
++            dispatch(&mut view, KeyCode::PageUp);
++            assert_eq!(view.start(&cells), (0, 100 - step), "{action}, height {height}");
++            dispatch(&mut view, KeyCode::PageDown);
++            assert_eq!(view.start(&cells), (0, 100));
++            dispatch(&mut view, KeyCode::PageDown);
++            assert_eq!(view.start(&cells), (0, 100 + step));
++            view.jump_to_beginning(&cells);
++            view.scroll(&cells, 1);
++            dispatch(&mut view, KeyCode::PageUp);
++            assert_eq!(view.start(&cells), (0, 0));
++            dispatch(&mut view, KeyCode::PageUp);
++            assert_eq!(view.start(&cells), (0, 0));
++            view.jump_to_latest();
++            let bottom = view.start(&cells);
++            assert_eq!(bottom, (0, 300 - usize::from(height)));
++            view.scroll(&cells, -1);
++            dispatch(&mut view, KeyCode::PageDown);
++            assert_eq!(view.start(&cells), bottom);
++            assert!(view.is_following());
++            dispatch(&mut view, KeyCode::PageDown);
++            assert_eq!(view.start(&cells), bottom);
++            assert!(view.is_following());
++        }
++    }
++}
++
++#[test]
++fn scroll_40_transcript_pager_steps_and_bounds() {
++    // Includes height 24 -> 9 (not pristine 24), in both directions.
++    check_scroll_40_transcript_path(false);
++}
++
++#[test]
++fn scroll_40_transcript_ordinary_input_steps_and_bounds() {
++    // Includes height 24 -> 9 (not pristine 23), in both directions.
++    check_scroll_40_transcript_path(true);
++}

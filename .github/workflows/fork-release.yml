@@ -1,0 +1,69 @@
+name: Fork merged release validation
+on:
+  push:
+    branches: [fork]
+    paths: [fork/manifest.json]
+  workflow_dispatch:
+permissions:
+  contents: read
+concurrency:
+  group: fork-release
+  cancel-in-progress: false
+jobs:
+  validate:
+    if: github.ref == 'refs/heads/fork'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 100
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
+        with:
+          node-version: '24'
+      - name: Tests and workflow policy
+        run: |
+          node --test tests/
+          node fork/lib/workflow-policy.mjs --draft .github/workflows/fork-check.yml .github/workflows/fork-release.yml
+      - name: Read exact reviewed upstream pin
+        id: pin
+        run: node --input-type=module -e 'import {readManifest} from "./fork/lib/manifest.mjs"; import {appendFileSync} from "node:fs"; const m=readManifest("./fork/manifest.json"); if(!m.production_ready) throw Error("Finalized inputs required"); appendFileSync(process.env.GITHUB_OUTPUT, `commit=${m.upstream.commit}\n`);'
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+        with:
+          repository: openai/codex
+          ref: ${{ steps.pin.outputs.commit }}
+          path: .work/upstream
+          persist-credentials: false
+      - name: Install pinned Rust toolchain
+        run: rustup toolchain install "$(node --input-type=module -e 'import {readManifest} from "./fork/lib/manifest.mjs"; console.log(readManifest("./fork/manifest.json").toolchain)')" --profile minimal
+      - name: Exact merged-input build and candidate artifact comparison
+        env:
+          P85_NATIVE_ASSETS: ${{ vars.P85_NATIVE_ASSETS }}
+        run: node fork/lib/ci.mjs release
+      - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
+        with:
+          name: fork-release
+          path: .work/output/*
+          if-no-files-found: error
+          retention-days: 30
+  attest:
+    needs: validate
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    environment: p85-reviewed-draft
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/download-artifact@d3f86a106a0bac45b974a628896c90dbdf5c8093 # v4
+        with:
+          name: fork-release
+          path: verified
+      - uses: actions/attest-build-provenance@e8998f949152b193b063cb0ec769d69d929409be # v2
+        with:
+          subject-path: verified/*.tar.gz
+      # Draft creation/publish use the owner transport after exact-byte review.
+      # This job signs data only; no checkout or repository code is executed.

@@ -1,0 +1,10 @@
+{
+  "release": {
+    "tag_name": "rust-v0.169.0",
+    "draft": false,
+    "prerelease": false,
+    "html_url": "https://example.invalid/synthetic/codex/releases/rust-v0.169.0",
+    "assets": []
+  },
+  "commit": "1111111111111111111111111111111111111111"
+}

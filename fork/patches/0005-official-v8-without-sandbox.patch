@@ -1,0 +1,53 @@
+Modified by the fork maintainer: owner option B, official non-sandbox V8 prebuilt.
+
+diff --git a/codex-rs/code-mode-runtime/Cargo.toml b/codex-rs/code-mode-runtime/Cargo.toml
+--- a/codex-rs/code-mode-runtime/Cargo.toml
++++ b/codex-rs/code-mode-runtime/Cargo.toml
+@@ -27,7 +27,7 @@
+ tokio = { workspace = true, features = ["macros", "rt", "sync", "time"] }
+ tokio-util = { workspace = true, features = ["codec", "compat", "rt"] }
+ tracing = { workspace = true }
+-v8 = { workspace = true, features = ["v8_enable_sandbox"] }
++v8 = { workspace = true, features = ["v8_enable_pointer_compression"] }
+ 
+ [dev-dependencies]
+ pretty_assertions = { workspace = true }
+diff --git a/codex-rs/code-mode-runtime/src/ui/mod.rs b/codex-rs/code-mode-runtime/src/ui/mod.rs
+--- a/codex-rs/code-mode-runtime/src/ui/mod.rs
++++ b/codex-rs/code-mode-runtime/src/ui/mod.rs
+@@ -12,12 +12,6 @@
+ 
+ pub fn run() -> io::Result<()> {
+     crate::initialize_v8(crate::V8JitMode::Disabled).map_err(io::Error::other)?;
+-    unsafe extern "C" {
+-        fn v8__V8__IsSandboxEnabled() -> bool;
+-    }
+-    // SAFETY: linked V8 exposes this query and has already been initialized.
+-    if !unsafe { v8__V8__IsSandboxEnabled() } {
+-        return Err(io::Error::other("sandbox-enabled V8 required"));
+-    }
++    // Fork option B: official V8 prebuilt without its heap sandbox.
+     workers::run()
+ }
+diff --git a/codex-rs/code-mode-runtime/src/runtime/mod.rs b/codex-rs/code-mode-runtime/src/runtime/mod.rs
+--- a/codex-rs/code-mode-runtime/src/runtime/mod.rs
++++ b/codex-rs/code-mode-runtime/src/runtime/mod.rs
+@@ -372,16 +372,8 @@
+     }
+ 
+     #[test]
+-    fn linked_v8_has_sandbox_enabled() {
+-        unsafe extern "C" {
+-            fn v8__V8__IsSandboxEnabled() -> bool;
+-        }
+-
+-        // `rusty_v8` exposes this symbol for verifying linked sandbox support.
+-        assert!(
+-            unsafe { v8__V8__IsSandboxEnabled() },
+-            "code mode must link against sandbox-enabled V8"
+-        );
++    fn linked_official_v8_initializes() {
++        crate::v8_init::ensure_v8_initialized().expect("official prebuilt V8 initializes");
+     }
+ 
+     #[tokio::test]

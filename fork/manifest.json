@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "fork": "codex",
+  "fork_version": "0.167.1-p2",
+  "upstream": {
+    "repo": "openai/codex",
+    "tag": "rust-v0.167.1",
+    "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46"
+  },
+  "patches": [
+    {
+      "file": "0001-scroll-40-percent.patch",
+      "sha256": "555a8ab95a01cc2dc3bee177fb860499cf8b177d1552e611e21228dc6877e6e1"
+    },
+    {
+      "file": "0002-scroll-40-percent-tests.patch",
+      "sha256": "ca1b9c3827e667a60b0d5c2b5b147a7100cc1c2f8b93164abaaeedf566b505d2"
+    },
+    {
+      "file": "0005-official-v8-without-sandbox.patch",
+      "sha256": "cbb5e12d957cb26e68eedb6a13b7e2297df1cd2aef290730c4ddf6242a46500f"
+    }
+  ],
+  "patchset_sha256": "34ea7061eea3f991b9aaa9ea6177ce2d83a38d2272028b470334da064e736ab6",
+  "toolchain": "1.95.0",
+  "lockfile_sha256": "9efc26116852723f76540da85d9e4537979014f166c39494bef61e49a9cc0883",
+  "production_ready": true,
+  "target": "x86_64-unknown-linux-gnu",
+  "bins": [
+    "codex",
+    "codex-code-mode-host",
+    "codex-exec-server"
+  ],
+  "native_assets": [
+    {
+      "name": "librusty_v8_ptrcomp_release_x86_64-unknown-linux-gnu.a.gz",
+      "url": "https://github.com/denoland/rusty_v8/releases/download/v152.2.0/librusty_v8_ptrcomp_release_x86_64-unknown-linux-gnu.a.gz",
+      "sha256": "aaeba7932acdfa9ff44592d9292bf4dd63651e2abafdeb8a5952199b5901ea50"
+    },
+    {
+      "name": "src_binding_ptrcomp_release_x86_64-unknown-linux-gnu.rs",
+      "url": "https://github.com/denoland/rusty_v8/releases/download/v152.2.0/src_binding_ptrcomp_release_x86_64-unknown-linux-gnu.rs",
+      "sha256": "3e4d5fecdbe0f98a6017e69d7ca82519a77fb032c5eb5e4cdbecdd3e2ec519d5"
+    }
+  ]
+}
