@@ -40,3 +40,46 @@ test('loaded literal policy requires its exact source-proof digest before granti
  report.proofs[0].classification='unreviewed';writeFileSync(join(root,'privacy-literal-proofs.json'),JSON.stringify(report));
  assert.throws(()=>module.scanBytes(bytes,{name:'bin/codex'}),/Invalid exact literal policy/);
 });
+
+test('a proven literal never exempts an adjacent sk credential or another artifact',async t=>{
+ const {mkdirSync,copyFileSync,writeFileSync}=await import('node:fs');
+ const {join}=await import('node:path');
+ const {pathToFileURL}=await import('node:url');
+ const {temp}=await import('./helpers.mjs');
+ const root=temp(t);mkdirSync(join(root,'lib'));
+ for(const file of ['canary.mjs','manifest.mjs'])copyFileSync(new URL('../fork/lib/'+file,import.meta.url),join(root,'lib',file));
+ const literal=Buffer.from('sk-'+'PublicFixtureLiteral'.repeat(2));
+ const options={name:'bin/codex'};
+ const canonical=value=>value&&typeof value==='object'?(Array.isArray(value)?value.map(canonical):Object.fromEntries(Object.keys(value).sort().map(k=>[k,canonical(value[k])]))):value;
+ function pin(bytes) {
+  const match={kind:'tokenLike',offset:1,length:literal.length,sha256:sha256(literal)};
+  const body={artifactSha256:sha256(bytes),classification:'upstream-non-secret-literal',file:options.name,match,upstreamCommit:'a'.repeat(40)};
+  const proofSha256=sha256(JSON.stringify(canonical(body)));
+  const {match:unused,...entryBody}=body;
+  writeFileSync(join(root,'privacy-literals.json'),JSON.stringify({schema:1,entries:[{...entryBody,...match,proofSha256}]}));
+  writeFileSync(join(root,'privacy-literal-proofs.json'),JSON.stringify({complete:true,unresolved:[],proofs:[{...body,proofSha256}]}));
+ }
+ const module=await import(pathToFileURL(join(root,'lib/canary.mjs')).href);
+ const clean=Buffer.concat([Buffer.from([255]),literal,Buffer.from([0])]);pin(clean);
+ assert.doesNotThrow(()=>module.scanBytes(clean,options));
+ const prefix='sk-';
+ // Inert synthetic keys with legacy, project and service-account shapes.
+ for(const key of [prefix+'A7b9C2d4E6f8G0h1'.repeat(3),prefix+'proj-'+'A7b9C2d4E6f8G0h1'.repeat(9),prefix+'svcacct-'+'A7b9C2d4E6f8G0h1'.repeat(9)]) {
+  const bytes=Buffer.concat([clean,Buffer.from(key)]);
+  // Rebind the harmless literal to the complete contaminated artifact: a stale
+  // artifact pin cannot be the reason the second match is refused.
+  pin(bytes);
+  assert.throws(()=>module.scanBytes(bytes,options),error=>{
+   assert.ok(!error.message.includes(key),'credential bytes must stay redacted');
+   const data=JSON.parse(error.message.split('; ')[1]);
+   assert.equal(data.ruleId,'token-like-sk');assert.equal(data.offset,clean.length);
+   assert.equal(data.matchSha256,sha256(Buffer.from(key)));
+   return true;
+  });
+ }
+ pin(clean);
+ assert.throws(()=>module.scanBytes(Buffer.concat([clean,Buffer.from([0])]),options),/redacted/);
+ assert.throws(()=>module.scanBytes(clean,{name:'bin/codex-exec-server'}),/redacted/);
+ // The same public match relocated within an otherwise plausible binary fails.
+ assert.throws(()=>module.scanBytes(Buffer.concat([Buffer.from([0]),clean]),options),/redacted/);
+});
