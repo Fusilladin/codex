@@ -144,7 +144,7 @@ node fork/bin/forkctl.mjs publish --evidence OWNER_EVIDENCE.json
 It requires exact HEAD approval through commit-review, a fresh Linux container record bound to HEAD and the committed artifact hash, a matching remote tag, immutable releases enabled, unchanged draft assets/checksums/manifest, and the public-scope guard. It re-downloads draft assets before publication. No automatic approvals or bot pushes are enabled. GNU runtime prerequisites include libssl3t64, libbz2-1.0, zlib1g and libzstd1.
 
 
-### 0.167.1-p3: clear the composer with Alt+U
+### 0.167.1-p4: clear the composer with Alt+U
 
 Press **Alt+U** once to clear the whole chat composer, at any cursor position.
 This also clears attachments and pending paste payloads. The cleared draft stays
@@ -159,3 +159,5 @@ The patch queue adds `0006-composer-alt-u-clear.patch` and
 four `alt_u_` behavior tests as well as the existing scroll tests. The maintenance
 kit also fixes draft lookup during publication by listing every releases page
 before selecting the exact tag. Publication guards remain required.
+
+Release 0.167.1-p4: maintenance publisher uses compatible paginated draft discovery and exact-input publication checks. Upstream runtime source and patches remain pinned.

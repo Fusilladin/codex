@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "fork": "codex",
-  "fork_version": "0.167.1-p3",
+  "fork_version": "0.167.1-p4",
   "upstream": {
     "repo": "openai/codex",
     "tag": "rust-v0.167.1",

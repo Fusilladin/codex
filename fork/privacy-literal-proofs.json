@@ -3739,6 +3739,1875 @@
       ],
       "classification": "upstream-non-secret-literal",
       "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "6245857aee9cb89a73c149a64ccf11ca5ff8f8a10929d682c37725013731d00f",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11434497,
+        "length": 24,
+        "sha256": "7045819ba2c152df791972ca75da2d98edae0141c1fd11af02750213d1f1e36a"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/tui/src/cli.rs",
+          "line": 70,
+          "sourceOffset": 2402,
+          "sourceSha256": "a2fa6eca759af254c9118eabbd042906d9957ffa6dc7f6d4de5a59377ca060b0",
+          "literalSha256": "e9057494e55edddc9564bb320e265ec474df2eddd7caee087315595915bdd2bc",
+          "literalBytes": 16,
+          "literalOffset": 1,
+          "matchOffset": 0,
+          "length": 15,
+          "segmentSha256": "a9337adc7dc7f782f56a83fdfb9d4c78561c8d9f79b2ddf37873a1143f93632a",
+          "emission": "llvm-constant-fragment",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a2fa6eca759af254c9118eabbd042906d9957ffa6dc7f6d4de5a59377ca060b0"
+          }
+        },
+        {
+          "path": "codex-rs/app-server/src/request_processors/initialize_processor.rs",
+          "line": 200,
+          "sourceOffset": 8788,
+          "sourceSha256": "3074d588d6dd18067b4b0b380e4903f1176b4bc3f5d1c650d87694b437b541fd",
+          "literalSha256": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+          "literalBytes": 9,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 15,
+          "length": 9,
+          "segmentSha256": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "3074d588d6dd18067b4b0b380e4903f1176b4bc3f5d1c650d87694b437b541fd"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "3d0af582c62708bcf6739da6533ce86e244f48324ebb2eea1151e2e4bd5918b2",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11474192,
+        "length": 25,
+        "sha256": "76709299b805c2bc5621e479d417e3a23bc22afa42cf8c8b581d9ee868aec5e0"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/login/src/auth/api_key.rs",
+          "line": 8,
+          "sourceOffset": 378,
+          "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570",
+          "literalSha256": "98e973f27ee09699c174872e350ae63ac771366bf00e51bdb35da0b9689f34fe",
+          "literalBytes": 16,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 16,
+          "segmentSha256": "98e973f27ee09699c174872e350ae63ac771366bf00e51bdb35da0b9689f34fe",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/tiny_http-0.12.0/src/response.rs",
+          "line": 360,
+          "sourceOffset": 10859,
+          "sourceSha256": "946c4aa551b7a16cc2ea5f86f8ae2ce9b9bda3faecb2f9d1057d5bc17cb2dbdc",
+          "literalSha256": "ba30902a7849157e9b67e8db85c65ad8f4a96461bc6d0d93af21cdcac6d878cc",
+          "literalBytes": 16,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 9,
+          "segmentSha256": "003104a7e1e86a100a1e8daf7b26b396dbc671b89cd23cb9bcd3fb24b56b6a15",
+          "emission": "llvm-constant-fragment",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "tiny_http",
+            "version": "0.12.0",
+            "packageSha256": "389915df6413a2e74fb181895f933386023c71110878cd0825588928e64cdc82",
+            "sourceSha256": "946c4aa551b7a16cc2ea5f86f8ae2ce9b9bda3faecb2f9d1057d5bc17cb2dbdc"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "57d05927ce4cbe49b3d869073a79b9c505ea366d43b3240aa27cd453f9491d22",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 12051300,
+        "length": 34,
+        "sha256": "6d9c316bd899bf73f6c177c632d3530ea196726d20a4f6a411155137dcd80623"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 917,
+          "sourceOffset": 29557,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "449b11820b0f65268bca74c8c9153fa9bebd2a9ee8b3e6ec479d768b46242c2a",
+          "literalBytes": 3,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 3,
+          "segmentSha256": "449b11820b0f65268bca74c8c9153fa9bebd2a9ee8b3e6ec479d768b46242c2a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 918,
+          "sourceOffset": 29572,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "acaec9036c163090662df57342268b5b42cb6ae3d6015a73968643b942516801",
+          "literalBytes": 3,
+          "literalOffset": 0,
+          "matchOffset": 3,
+          "length": 3,
+          "segmentSha256": "acaec9036c163090662df57342268b5b42cb6ae3d6015a73968643b942516801",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 924,
+          "sourceOffset": 29667,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "34c770dfe85a65f0fb1818b061eeab42609d07c0b0bb3766df14bac431cdb592",
+          "literalBytes": 11,
+          "literalOffset": 0,
+          "matchOffset": 6,
+          "length": 11,
+          "segmentSha256": "34c770dfe85a65f0fb1818b061eeab42609d07c0b0bb3766df14bac431cdb592",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 925,
+          "sourceOffset": 29690,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "7afda09eac5b3bb7e1d986c64b1778ae4ccd27291f7c763cdfbdc9969759f071",
+          "literalBytes": 5,
+          "literalOffset": 0,
+          "matchOffset": 17,
+          "length": 5,
+          "segmentSha256": "7afda09eac5b3bb7e1d986c64b1778ae4ccd27291f7c763cdfbdc9969759f071",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 926,
+          "sourceOffset": 29707,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "57b72ae4eb8b0be766490a235daab1f41df8e5b82ce584bb69fad36d803ba0ff",
+          "literalBytes": 5,
+          "literalOffset": 0,
+          "matchOffset": 22,
+          "length": 5,
+          "segmentSha256": "57b72ae4eb8b0be766490a235daab1f41df8e5b82ce584bb69fad36d803ba0ff",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/codex-api/src/files.rs",
+          "line": 211,
+          "sourceOffset": 7017,
+          "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be",
+          "literalSha256": "5a638a128ca67348f1073ba0aed26d85905a29128cbd71b250c9cf4e598c7f0d",
+          "literalBytes": 7,
+          "literalOffset": 0,
+          "matchOffset": 27,
+          "length": 7,
+          "segmentSha256": "5a638a128ca67348f1073ba0aed26d85905a29128cbd71b250c9cf4e598c7f0d",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "485a3d4edd9a3ef9d675b2a4254b123ef7bac723834ebd539b6ea89c4c7464a1",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 13968460,
+        "length": 33,
+        "sha256": "9c20f9fe8970acb4a0297c38aed0f501b9d2ba80acea6dc80795a773c72579b5"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/login/src/auth/api_key.rs",
+          "line": 8,
+          "sourceOffset": 421,
+          "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570",
+          "literalSha256": "72e0696aac5314c4f859d4971e997d7872648f58b7153aeb6c6eb6028f0f82e2",
+          "literalBytes": 19,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 19,
+          "segmentSha256": "72e0696aac5314c4f859d4971e997d7872648f58b7153aeb6c6eb6028f0f82e2",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570"
+          }
+        },
+        {
+          "path": "codex-rs/core-plugins/src/remote/share/checkout.rs",
+          "line": 382,
+          "sourceOffset": 13290,
+          "sourceSha256": "24f456b405a4bc2fc548318a808bef4f87f3423e4f4b9f6fc299c6770794a965",
+          "literalSha256": "b9d90628453938c578c7f826de5e5bd2bcac29e10c5526888384ba74fcea563e",
+          "literalBytes": 14,
+          "literalOffset": 0,
+          "matchOffset": 19,
+          "length": 14,
+          "segmentSha256": "b9d90628453938c578c7f826de5e5bd2bcac29e10c5526888384ba74fcea563e",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "24f456b405a4bc2fc548318a808bef4f87f3423e4f4b9f6fc299c6770794a965"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "45e543abc3c9ab3d92e345aee93dee471857fca6b3fa5bc90c4206a49d09fadf",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 14851025,
+        "length": 51,
+        "sha256": "f51d02fb859198f974339e3abed8db2597ad6cc41a494c366179457bcdad6025"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 13,
+          "sourceOffset": 447,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "b57f899ba0262153445d0811585b1c40e94b0f64cc5b6ca8bda4a5f227ed7ca8",
+          "literalBytes": 11,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 11,
+          "segmentSha256": "b57f899ba0262153445d0811585b1c40e94b0f64cc5b6ca8bda4a5f227ed7ca8",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 13,
+          "sourceOffset": 462,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "f18542b68a387e3a7ad386dc64eca60db7523409da442f08ecdfe4d8631dd067",
+          "literalBytes": 9,
+          "literalOffset": 0,
+          "matchOffset": 11,
+          "length": 9,
+          "segmentSha256": "f18542b68a387e3a7ad386dc64eca60db7523409da442f08ecdfe4d8631dd067",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 21,
+          "sourceOffset": 836,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "feb48d0281b091fce6e53df1ab3b326e7eb43609c81e99a83363de1a0dd208c5",
+          "literalBytes": 7,
+          "literalOffset": 0,
+          "matchOffset": 20,
+          "length": 7,
+          "segmentSha256": "feb48d0281b091fce6e53df1ab3b326e7eb43609c81e99a83363de1a0dd208c5",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 21,
+          "sourceOffset": 847,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "2321b95cb3578b946392e11e95d0e1cb5a14857245d5aea0077de023796b28af",
+          "literalBytes": 6,
+          "literalOffset": 0,
+          "matchOffset": 27,
+          "length": 6,
+          "segmentSha256": "2321b95cb3578b946392e11e95d0e1cb5a14857245d5aea0077de023796b28af",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/exec-server/src/client/route_aware_http_client.rs",
+          "line": 48,
+          "sourceOffset": 1828,
+          "sourceSha256": "523e430cbd96abcda961687a4c8e0c3b5e405bc84cb183b4875d7a31c89ee4d3",
+          "literalSha256": "1bd0074c9fd82ff86b8a0f167c771b4d5a563c22cb6f364cb2980ef7608f4754",
+          "literalBytes": 14,
+          "literalOffset": 0,
+          "matchOffset": 33,
+          "length": 14,
+          "segmentSha256": "1bd0074c9fd82ff86b8a0f167c771b4d5a563c22cb6f364cb2980ef7608f4754",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "523e430cbd96abcda961687a4c8e0c3b5e405bc84cb183b4875d7a31c89ee4d3"
+          }
+        },
+        {
+          "path": "codex-rs/codex-api/src/files.rs",
+          "line": 213,
+          "sourceOffset": 7084,
+          "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be",
+          "literalSha256": "230d8358dc8e8890b4c58deeb62912ee2f20357ae92a5cc861b98e68fe31acb5",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 47,
+          "length": 4,
+          "segmentSha256": "230d8358dc8e8890b4c58deeb62912ee2f20357ae92a5cc861b98e68fe31acb5",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "5faa551225e2b12a4fceeb97490ebce1ed9979839ba000aed2db09d8e121953a",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 15781205,
+        "length": 21,
+        "sha256": "0905fbb0168ca8f1991d41a1369f592b9985466a11801f82dc72647377b56b3f"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/title.rs",
+          "line": 149,
+          "sourceOffset": 5274,
+          "sourceSha256": "032d0d9ac4eca9d372216514348f338f95ba6444acf219410db81508866226ec",
+          "literalSha256": "b1e8945904a2aded285989dd99cb869d93d571f41905d89ddf38dbf196daf710",
+          "literalBytes": 13,
+          "literalOffset": 2,
+          "matchOffset": 0,
+          "length": 11,
+          "segmentSha256": "55db6577df8e26a773e561016691b3d68639f8b5a55b55afa75910d2c79a4b81",
+          "emission": "llvm-constant-fragment",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "032d0d9ac4eca9d372216514348f338f95ba6444acf219410db81508866226ec"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/x11rb-protocol-0.13.2/src/protocol/xproto.rs",
+          "line": 16159,
+          "sourceOffset": 596758,
+          "sourceSha256": "597464da6b161b764cfb666d493dcd34309a3cc3c51f28fb0c1249d77f7dd7b5",
+          "literalSha256": "ea2b8a878841df5955c78edc6cae47446483b86e3f5ccb04e1a8d940cf7e59fd",
+          "literalBytes": 10,
+          "literalOffset": 0,
+          "matchOffset": 11,
+          "length": 10,
+          "segmentSha256": "ea2b8a878841df5955c78edc6cae47446483b86e3f5ccb04e1a8d940cf7e59fd",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "x11rb-protocol",
+            "version": "0.13.2",
+            "packageSha256": "ea6fc2961e4ef194dcbfe56bb845534d0dc8098940c7e5c012a258bfec6701bd",
+            "sourceSha256": "597464da6b161b764cfb666d493dcd34309a3cc3c51f28fb0c1249d77f7dd7b5"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "b34672125f95cd7ce992314f749dcd3796e7e9ba71d7dec4db89a5176fb65895",
+      "kind": "single-upstream-literal",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 16121636,
+        "length": 19,
+        "sha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/utils/cli/src/config_override.rs",
+          "line": 27,
+          "sourceOffset": 1273,
+          "sourceSha256": "72933da6860c47d32da42e7e8dfcbdf463cd365366684bea11c39af5e88c428a",
+          "literalSha256": "b2a041ec39b888babd8e76e7b0ce4478efc930b767734dbbce813a09f229f955",
+          "literalBytes": 21,
+          "literalOffset": 2,
+          "matchOffset": 0,
+          "length": 19,
+          "segmentSha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "72933da6860c47d32da42e7e8dfcbdf463cd365366684bea11c39af5e88c428a"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "025a4452e650e6b9e4096e5b403c9318a3dd80ad26d0dfd680e7bb9d7eb900df",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11570576,
+        "length": 48,
+        "sha256": "0ab45ae4ab407cdef7656699ccdbd379e136f77b7e9bdf578b275f73503a20fd"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 919,
+          "sourceOffset": 29587,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "b670eb5d70a65acdaf86aeb336aaa69b850a09ca28fc3d3cf7bb6e4fda9ce2a8",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "b670eb5d70a65acdaf86aeb336aaa69b850a09ca28fc3d3cf7bb6e4fda9ce2a8",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/serde_json-1.0.149/src/de.rs",
+          "line": 287,
+          "sourceOffset": 9282,
+          "sourceSha256": "2364aaa767bb40eeedd4aa24e3bf917be5e007a00bd3d911b61f9de74aa5f074",
+          "literalSha256": "27725d8200b2a222bb3936ff8c507b0b8c332d91814079154d08a08b193f1ed3",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 4,
+          "length": 4,
+          "segmentSha256": "27725d8200b2a222bb3936ff8c507b0b8c332d91814079154d08a08b193f1ed3",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "serde_json",
+            "version": "1.0.149",
+            "packageSha256": "83fc039473c5595ace860d8c4fafa220ff474b3fc6bfdb4293327f1a37e94d86",
+            "sourceSha256": "2364aaa767bb40eeedd4aa24e3bf917be5e007a00bd3d911b61f9de74aa5f074"
+          }
+        },
+        {
+          "path": "codex-rs/responses-api-proxy/src/lib.rs",
+          "line": 50,
+          "sourceOffset": 1283,
+          "sourceSha256": "e080ce9ef9b8e858ceee145842ad8b84ce3b38056c892e3f2115d5caeae71b71",
+          "literalSha256": "f8d397a33fcb9725db96501e653bf3cfa4455c5639482b9936c22b221634d659",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 4,
+          "segmentSha256": "f8d397a33fcb9725db96501e653bf3cfa4455c5639482b9936c22b221634d659",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "e080ce9ef9b8e858ceee145842ad8b84ce3b38056c892e3f2115d5caeae71b71"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/chrono-0.4.43/src/format/locales.rs",
+          "line": 76,
+          "sourceOffset": 2250,
+          "sourceSha256": "d49de3da43941c94b1108f8fe84915cc5e1c13a1f1c84fd7356f9b7c61f19242",
+          "literalSha256": "e9cf7a1ca4a760843ff30e1fbb125e6a066c63e883c58523bdbe04c9daf5dbae",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 12,
+          "length": 4,
+          "segmentSha256": "e9cf7a1ca4a760843ff30e1fbb125e6a066c63e883c58523bdbe04c9daf5dbae",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "chrono",
+            "version": "0.4.43",
+            "packageSha256": "fac4744fb15ae8337dc853fee7fb3f4e48c0fbaa23d0afe49c447b4fab126118",
+            "sourceSha256": "d49de3da43941c94b1108f8fe84915cc5e1c13a1f1c84fd7356f9b7c61f19242"
+          }
+        },
+        {
+          "path": "codex-rs/state/src/telemetry.rs",
+          "line": 263,
+          "sourceOffset": 8130,
+          "sourceSha256": "246e0dcc662d09afb31500b47e088768ac4c36e3f5e014b1d91f10c0d0dc6a7a",
+          "literalSha256": "c9bc072f4fa8189466c2a8f2c36a56a4ef1e60a2ffa4986ba2f155cd176c128b",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 4,
+          "segmentSha256": "c9bc072f4fa8189466c2a8f2c36a56a4ef1e60a2ffa4986ba2f155cd176c128b",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "246e0dcc662d09afb31500b47e088768ac4c36e3f5e014b1d91f10c0d0dc6a7a"
+          }
+        },
+        {
+          "path": "codex-rs/core-plugins/src/startup_sync.rs",
+          "line": 202,
+          "sourceOffset": 8548,
+          "sourceSha256": "57b3a9295919060467a976b70ea18dc0ebfd824f0e788c0c491df4038fe37641",
+          "literalSha256": "bb54068aea85faa7e487530083366be9962390af822e4c71ef1aca7033c83e66",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 20,
+          "length": 4,
+          "segmentSha256": "bb54068aea85faa7e487530083366be9962390af822e4c71ef1aca7033c83e66",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "57b3a9295919060467a976b70ea18dc0ebfd824f0e788c0c491df4038fe37641"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/zoneinfo64-0.3.0/src/lib.rs",
+          "line": 274,
+          "sourceOffset": 9279,
+          "sourceSha256": "8786de12e4a3a9e996ba023ab214fd24dc48aaf30beda315e77b9025c6175112",
+          "literalSha256": "7369949b47ef2c6ba26fbbee659cedc76123a75c17d321a52d8d1ef35e948042",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 24,
+          "length": 4,
+          "segmentSha256": "7369949b47ef2c6ba26fbbee659cedc76123a75c17d321a52d8d1ef35e948042",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "zoneinfo64",
+            "version": "0.3.0",
+            "packageSha256": "ed6eb2607e906160c457fd573e9297e65029669906b9ac8fb1b5cd5e055f0705",
+            "sourceSha256": "8786de12e4a3a9e996ba023ab214fd24dc48aaf30beda315e77b9025c6175112"
+          }
+        },
+        {
+          "path": "codex-rs/tui/src/analytics/normalize.rs",
+          "line": 342,
+          "sourceOffset": 14771,
+          "sourceSha256": "5f42b5ed7c7e42dfe2a92deabc110e8e6a00292a26fd767129dc81c4cbfe2a2e",
+          "literalSha256": "104ab9213e28e4ff5ba0b4086457503e8a4656815cfec7bcf2799d76a3db081d",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 28,
+          "length": 4,
+          "segmentSha256": "104ab9213e28e4ff5ba0b4086457503e8a4656815cfec7bcf2799d76a3db081d",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "5f42b5ed7c7e42dfe2a92deabc110e8e6a00292a26fd767129dc81c4cbfe2a2e"
+          }
+        },
+        {
+          "path": "codex-rs/tui/src/analytics/chart.rs",
+          "line": 211,
+          "sourceOffset": 8053,
+          "sourceSha256": "9809bfd949ab671c860e13b1beda3652a02abc4455fd7695a258c6db5c0f85f4",
+          "literalSha256": "460b3a7da007b7af9d35bca54181dc91382263b2bf133ca214871ca1fed1fc1c",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 32,
+          "length": 4,
+          "segmentSha256": "460b3a7da007b7af9d35bca54181dc91382263b2bf133ca214871ca1fed1fc1c",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "9809bfd949ab671c860e13b1beda3652a02abc4455fd7695a258c6db5c0f85f4"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/rama-net-0.3.0-alpha.4/src/tls/enums.rs",
+          "line": 736,
+          "sourceOffset": 32174,
+          "sourceSha256": "c8ea6ace3cfa56d6759b011e2d790100bdde8720e5046b8e9e7c041abc98bf4d",
+          "literalSha256": "f8d210e9fca3ccf3095bf4e362c4493245052b5de4534b1030923468f9b4c88a",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 36,
+          "length": 4,
+          "segmentSha256": "f8d210e9fca3ccf3095bf4e362c4493245052b5de4534b1030923468f9b4c88a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "rama-net",
+            "version": "0.3.0-alpha.4",
+            "packageSha256": "b28ee9e1e5d39264414b71f5c33e7fbb66b382c3fac456fe0daad39cf5509933",
+            "sourceSha256": "c8ea6ace3cfa56d6759b011e2d790100bdde8720e5046b8e9e7c041abc98bf4d"
+          }
+        },
+        {
+          "path": "codex-rs/protocol/src/local_media.rs",
+          "line": 88,
+          "sourceOffset": 3305,
+          "sourceSha256": "34e9b0320454dc5e14f2f27aa3be9b55b1ad95c45fbccde0f07ca2815528ac7a",
+          "literalSha256": "ed55d4a2399b114cff437979c536b15ce6a641448b3ceb33a68377451692dac2",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 40,
+          "length": 4,
+          "segmentSha256": "ed55d4a2399b114cff437979c536b15ce6a641448b3ceb33a68377451692dac2",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "34e9b0320454dc5e14f2f27aa3be9b55b1ad95c45fbccde0f07ca2815528ac7a"
+          }
+        },
+        {
+          "path": "codex-rs/login/src/auth/manager.rs",
+          "line": 873,
+          "sourceOffset": 33627,
+          "sourceSha256": "584348a470e6d7f147962bf5d642d23859f60a85772aac1e916032d414756a90",
+          "literalSha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 44,
+          "length": 4,
+          "segmentSha256": "9f86d081884c7d659a2feaa0c55ad015a3bf4f1b2b0b822cd15d6c15b0f00a08",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "584348a470e6d7f147962bf5d642d23859f60a85772aac1e916032d414756a90"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "a12d1608957a7bc7d8c7d4bfc39e9dbc00a0f366dc78d912d5a9d569cf41a666",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11576164,
+        "length": 20,
+        "sha256": "54a2efe17b6881a307ea35dace78ba3831dd09fad1ee6105f8da00d4a697a40d"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 923,
+          "sourceOffset": 29651,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "e8bd540a9453ecc7f3200a587f197058a5902ccd6ad306c5e7a02b1a8e082519",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "e8bd540a9453ecc7f3200a587f197058a5902ccd6ad306c5e7a02b1a8e082519",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/ratatui-core-0.1.2/src/style/color.rs",
+          "line": 355,
+          "sourceOffset": 14134,
+          "sourceSha256": "06d4f569eb8ffb18f3cf2f7d43083108b53765a17e2d87cc708c8604722e65b2",
+          "literalSha256": "e95bb222e07ff6733e9a5cda745cabf4df3f092ee8913c4932f43de902f86167",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 4,
+          "length": 4,
+          "segmentSha256": "e95bb222e07ff6733e9a5cda745cabf4df3f092ee8913c4932f43de902f86167",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "ratatui-core",
+            "version": "0.1.2",
+            "packageSha256": "cbb175c433c8e28a809d1f5773a2ae96e68c0ce40db865cbab1020bf33ae479c",
+            "sourceSha256": "06d4f569eb8ffb18f3cf2f7d43083108b53765a17e2d87cc708c8604722e65b2"
+          }
+        },
+        {
+          "path": "codex-rs/app-server/src/request_processors/config_processor.rs",
+          "line": 647,
+          "sourceOffset": 26439,
+          "sourceSha256": "b1aee88ebd44718bd5c8b20ea25144addc229ca5acc9ecd0810f58bc3f39b919",
+          "literalSha256": "9dd6cc8d8ccb4481ed757eaa3f543c79e70f6eed1f95d74cfbe3f25a2d0ccefc",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 4,
+          "segmentSha256": "9dd6cc8d8ccb4481ed757eaa3f543c79e70f6eed1f95d74cfbe3f25a2d0ccefc",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "b1aee88ebd44718bd5c8b20ea25144addc229ca5acc9ecd0810f58bc3f39b919"
+          }
+        },
+        {
+          "path": "codex-rs/codex-api/src/endpoint/realtime_call.rs",
+          "line": 282,
+          "sourceOffset": 9999,
+          "sourceSha256": "c9a987c05dadabb620dfaea38e8b739735efaf3f931daeec7c59d69f56788252",
+          "literalSha256": "4b28aa96da3a6a57933e66b8f88e8ad348ebae04df943983490ac4b4c4d55d6d",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 12,
+          "length": 4,
+          "segmentSha256": "4b28aa96da3a6a57933e66b8f88e8ad348ebae04df943983490ac4b4c4d55d6d",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "c9a987c05dadabb620dfaea38e8b739735efaf3f931daeec7c59d69f56788252"
+          }
+        },
+        {
+          "path": "codex-rs/login/src/auth/manager.rs",
+          "line": 2128,
+          "sourceOffset": 78968,
+          "sourceSha256": "584348a470e6d7f147962bf5d642d23859f60a85772aac1e916032d414756a90",
+          "literalSha256": "a4c3ed04a95a3da14a9d235c83d868bed7c0f45cf7f3faa751ee8f50598d2211",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 4,
+          "segmentSha256": "a4c3ed04a95a3da14a9d235c83d868bed7c0f45cf7f3faa751ee8f50598d2211",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "584348a470e6d7f147962bf5d642d23859f60a85772aac1e916032d414756a90"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "2636098bae6dced7313a80e77eff8b91bf82b4a9c830b95c85ef4e359186be2a",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11577648,
+        "length": 20,
+        "sha256": "4b5baa2bd6d4c85fed111f7182bb0696f6bb5c5a862c684ba277f45ac390c90f"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 920,
+          "sourceOffset": 29603,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "1caf8e22a84dd7453643b7842d4adaab91482e5a12ea7b5061e868aa38f51734",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "1caf8e22a84dd7453643b7842d4adaab91482e5a12ea7b5061e868aa38f51734",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 922,
+          "sourceOffset": 29635,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "9d8e3c88df4791b9ce2a8f1e23e3eff917de5a13ab6a7e516e299ab8ccf4392c",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 4,
+          "length": 4,
+          "segmentSha256": "9d8e3c88df4791b9ce2a8f1e23e3eff917de5a13ab6a7e516e299ab8ccf4392c",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/codex-backend-openapi-models/src/models/rate_limit_status_payload.rs",
+          "line": 105,
+          "sourceOffset": 3078,
+          "sourceSha256": "441601abdf732690c94902826937448f3f212146264a86a94fd3f89675a90006",
+          "literalSha256": "383ef36928344f56ffe8fe23ceed2ad8c0db8ec222c5f56c47163747dc738a0e",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 4,
+          "segmentSha256": "383ef36928344f56ffe8fe23ceed2ad8c0db8ec222c5f56c47163747dc738a0e",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "441601abdf732690c94902826937448f3f212146264a86a94fd3f89675a90006"
+          }
+        },
+        {
+          "path": "codex-rs/protocol/src/protocol.rs",
+          "line": 336,
+          "sourceOffset": 13385,
+          "sourceSha256": "c7d307454bf2d8131ea35b6e02b2d834d12d6373a143d207af9e45cce0cb1d5e",
+          "literalSha256": "8192ccdff1a650ff0bc079006db935b905d0b486546d0d6274aec5131674d9d7",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 12,
+          "length": 4,
+          "segmentSha256": "8192ccdff1a650ff0bc079006db935b905d0b486546d0d6274aec5131674d9d7",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "c7d307454bf2d8131ea35b6e02b2d834d12d6373a143d207af9e45cce0cb1d5e"
+          }
+        },
+        {
+          "path": "codex-rs/analytics/src/accepted_lines.rs",
+          "line": 114,
+          "sourceOffset": 3457,
+          "sourceSha256": "a9cddaf843af8466a80a9c7c9084ea1918f7d3cac0ddec82d3a02d211dfd782f",
+          "literalSha256": "071ca2227754705837aa3ef9748ed59e9f8a015fd765c42f391a4cbc271c6d5e",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 4,
+          "segmentSha256": "071ca2227754705837aa3ef9748ed59e9f8a015fd765c42f391a4cbc271c6d5e",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a9cddaf843af8466a80a9c7c9084ea1918f7d3cac0ddec82d3a02d211dfd782f"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "16e55601d12337aab3d47857707d44ea75cead148f093237ac7317a3eff6ed90",
+      "kind": "derive-macro CLI type-name literal",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122",
+      "match": {
+        "kind": "ownerPattern",
+        "patternSha256": "c38c694be0201b1fe5ab1dd8dac366a9fbd75daae63e34a23cad3a38b70c21f7",
+        "offset": 11444390,
+        "length": 4,
+        "sha256": "6b73babf56322cece5630e9cb20f51ca71e76905ea66ac98fff63223de2d343c"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/utils/cli/src/shared_options.rs",
+          "sourceOffset": 303,
+          "line": 10,
+          "sourceSha256": "6eefb5fcf0545fca54ffa1f80a6d3630c8d9b61ec449466d5834ac9c489f76d8",
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "6b73babf56322cece5630e9cb20f51ca71e76905ea66ac98fff63223de2d343c",
+          "containerIdentifierBytes": 16,
+          "containerIdentifierSha256": "13a3ca768bd329a5522f9b6bd3f15a7af618ba2c025635c7bfa3f19a24f2e738",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "6eefb5fcf0545fca54ffa1f80a6d3630c8d9b61ec449466d5834ac9c489f76d8"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "9eb5d5072b6a941e9dcd4ce63e3543f855aac31e2a131c6bc5c72d64d2b020be",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 4608472,
+        "length": 56,
+        "sha256": "35387683734f51497a1ce15777840b9320f3058f2a0db374acc56254a8e10c55"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 13,
+          "sourceOffset": 435,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "fa0711ddc31e9c34d754f8326fb7e11847690b1ea680cb1f8ee312ba55b1c220",
+          "literalBytes": 8,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 8,
+          "segmentSha256": "fa0711ddc31e9c34d754f8326fb7e11847690b1ea680cb1f8ee312ba55b1c220",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/rama-net-0.3.0-alpha.4/src/tls/mod.rs",
+          "line": 105,
+          "sourceOffset": 3183,
+          "sourceSha256": "4d306082459be8ac8d4ad7cfd9c3c9a6e3a9744a393981db27e567077f460b9f",
+          "literalSha256": "6b20153c4d6a59764a3d3f61f7adc3a593066c2623764bfff76e4f40e264ed77",
+          "literalBytes": 8,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 8,
+          "segmentSha256": "6b20153c4d6a59764a3d3f61f7adc3a593066c2623764bfff76e4f40e264ed77",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "rama-net",
+            "version": "0.3.0-alpha.4",
+            "packageSha256": "b28ee9e1e5d39264414b71f5c33e7fbb66b382c3fac456fe0daad39cf5509933",
+            "sourceSha256": "4d306082459be8ac8d4ad7cfd9c3c9a6e3a9744a393981db27e567077f460b9f"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/encoding_rs-0.8.35/src/lib.rs",
+          "line": 2246,
+          "sourceOffset": 105399,
+          "sourceSha256": "c4d9fa1c43105e2310122f1b9197125032e607fe6f79bc22769b340de76e2430",
+          "literalSha256": "26cde534699e02f9fc71ad390a133130bd62a151eece33105c7b0b361844751e",
+          "literalBytes": 8,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 8,
+          "segmentSha256": "26cde534699e02f9fc71ad390a133130bd62a151eece33105c7b0b361844751e",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "encoding_rs",
+            "version": "0.8.35",
+            "packageSha256": "75030f3c4f45dafd7586dd6780965a8c7e8e285a5ecb86713e63a79c5b2766f3",
+            "sourceSha256": "c4d9fa1c43105e2310122f1b9197125032e607fe6f79bc22769b340de76e2430"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/encoding_rs-0.8.35/src/lib.rs",
+          "line": 2272,
+          "sourceOffset": 105815,
+          "sourceSha256": "c4d9fa1c43105e2310122f1b9197125032e607fe6f79bc22769b340de76e2430",
+          "literalSha256": "4ffbae68801817b08163dbd0023d76523c184fd01829d309f8731169cdf0dc32",
+          "literalBytes": 8,
+          "literalOffset": 0,
+          "matchOffset": 24,
+          "length": 8,
+          "segmentSha256": "4ffbae68801817b08163dbd0023d76523c184fd01829d309f8731169cdf0dc32",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "encoding_rs",
+            "version": "0.8.35",
+            "packageSha256": "75030f3c4f45dafd7586dd6780965a8c7e8e285a5ecb86713e63a79c5b2766f3",
+            "sourceSha256": "c4d9fa1c43105e2310122f1b9197125032e607fe6f79bc22769b340de76e2430"
+          }
+        },
+        {
+          "path": "codex-rs/exec/src/lib.rs",
+          "line": 2361,
+          "sourceOffset": 88091,
+          "sourceSha256": "53e0d7cac90466dc088dd5457c72813ef8c0a8c56fe6466eb602c85b8f45a6f3",
+          "literalSha256": "819abdc1a50784e2bbb9fa4052a8360ef83116cef37d78c25799e22fd6551381",
+          "literalBytes": 8,
+          "literalOffset": 0,
+          "matchOffset": 32,
+          "length": 8,
+          "segmentSha256": "819abdc1a50784e2bbb9fa4052a8360ef83116cef37d78c25799e22fd6551381",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "53e0d7cac90466dc088dd5457c72813ef8c0a8c56fe6466eb602c85b8f45a6f3"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/h2-0.4.19/src/frame/headers.rs",
+          "line": 808,
+          "sourceOffset": 21389,
+          "sourceSha256": "a7630564280006b29488c2fb399d52a70d8d7ccc6d1276fd291410b329d038c5",
+          "literalSha256": "6836ec5dc0aa0ed1ec9f15cec5dd80def7494b332c158d40430325f2367fbd2a",
+          "literalBytes": 8,
+          "literalOffset": 0,
+          "matchOffset": 40,
+          "length": 8,
+          "segmentSha256": "6836ec5dc0aa0ed1ec9f15cec5dd80def7494b332c158d40430325f2367fbd2a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "h2",
+            "version": "0.4.19",
+            "packageSha256": "ef8e5e5a340588f4452631496976cf8636d4a7ecf600239fdc27615d2530bc16",
+            "sourceSha256": "a7630564280006b29488c2fb399d52a70d8d7ccc6d1276fd291410b329d038c5"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/landlock-0.4.4/src/fs.rs",
+          "line": 84,
+          "sourceOffset": 3199,
+          "sourceSha256": "995664d750e49d7e5604cca00895f7014a231473a4edf316a5da0a18d67e4c1f",
+          "literalSha256": "3b03f7962fa7747a44922575f059ca4043f459f76c62acb69c9b1076bee42339",
+          "literalBytes": 8,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 48,
+          "length": 8,
+          "segmentSha256": "3b03f7962fa7747a44922575f059ca4043f459f76c62acb69c9b1076bee42339",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "landlock",
+            "version": "0.4.4",
+            "packageSha256": "49fefd6652c57d68aaa32544a4c0e642929725bdc1fd929367cdeb673ab81088",
+            "sourceSha256": "995664d750e49d7e5604cca00895f7014a231473a4edf316a5da0a18d67e4c1f"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "a7846e9f3107255405bbe7440e7d6475f6e76713c69c1fa571c5f48c3c1bbd20",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 5158271,
+        "length": 33,
+        "sha256": "9c20f9fe8970acb4a0297c38aed0f501b9d2ba80acea6dc80795a773c72579b5"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/login/src/auth/api_key.rs",
+          "line": 8,
+          "sourceOffset": 421,
+          "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570",
+          "literalSha256": "72e0696aac5314c4f859d4971e997d7872648f58b7153aeb6c6eb6028f0f82e2",
+          "literalBytes": 19,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 19,
+          "segmentSha256": "72e0696aac5314c4f859d4971e997d7872648f58b7153aeb6c6eb6028f0f82e2",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "0cc67fa336c1aa9af50e068b787ead6d38d024c184fe1ef65616ae70217d9570"
+          }
+        },
+        {
+          "path": "codex-rs/core-plugins/src/remote/share/checkout.rs",
+          "line": 382,
+          "sourceOffset": 13290,
+          "sourceSha256": "24f456b405a4bc2fc548318a808bef4f87f3423e4f4b9f6fc299c6770794a965",
+          "literalSha256": "b9d90628453938c578c7f826de5e5bd2bcac29e10c5526888384ba74fcea563e",
+          "literalBytes": 14,
+          "literalOffset": 0,
+          "matchOffset": 19,
+          "length": 14,
+          "segmentSha256": "b9d90628453938c578c7f826de5e5bd2bcac29e10c5526888384ba74fcea563e",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "24f456b405a4bc2fc548318a808bef4f87f3423e4f4b9f6fc299c6770794a965"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "8e36b24ab24acac1c40abf1ff21a1caf553316dacc2cbd48b797c0b580d00f6b",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 5214825,
+        "length": 51,
+        "sha256": "f51d02fb859198f974339e3abed8db2597ad6cc41a494c366179457bcdad6025"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 13,
+          "sourceOffset": 447,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "b57f899ba0262153445d0811585b1c40e94b0f64cc5b6ca8bda4a5f227ed7ca8",
+          "literalBytes": 11,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 11,
+          "segmentSha256": "b57f899ba0262153445d0811585b1c40e94b0f64cc5b6ca8bda4a5f227ed7ca8",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 13,
+          "sourceOffset": 462,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "f18542b68a387e3a7ad386dc64eca60db7523409da442f08ecdfe4d8631dd067",
+          "literalBytes": 9,
+          "literalOffset": 0,
+          "matchOffset": 11,
+          "length": 9,
+          "segmentSha256": "f18542b68a387e3a7ad386dc64eca60db7523409da442f08ecdfe4d8631dd067",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 21,
+          "sourceOffset": 836,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "feb48d0281b091fce6e53df1ab3b326e7eb43609c81e99a83363de1a0dd208c5",
+          "literalBytes": 7,
+          "literalOffset": 0,
+          "matchOffset": 20,
+          "length": 7,
+          "segmentSha256": "feb48d0281b091fce6e53df1ab3b326e7eb43609c81e99a83363de1a0dd208c5",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/network-proxy/src/credential_broker/providers/openai.rs",
+          "line": 21,
+          "sourceOffset": 847,
+          "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322",
+          "literalSha256": "2321b95cb3578b946392e11e95d0e1cb5a14857245d5aea0077de023796b28af",
+          "literalBytes": 6,
+          "literalOffset": 0,
+          "matchOffset": 27,
+          "length": 6,
+          "segmentSha256": "2321b95cb3578b946392e11e95d0e1cb5a14857245d5aea0077de023796b28af",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a01530a958128beaee63627be9dc00e5faed6e0c76b0b378dba07965d515a322"
+          }
+        },
+        {
+          "path": "codex-rs/exec-server/src/client/route_aware_http_client.rs",
+          "line": 48,
+          "sourceOffset": 1828,
+          "sourceSha256": "523e430cbd96abcda961687a4c8e0c3b5e405bc84cb183b4875d7a31c89ee4d3",
+          "literalSha256": "1bd0074c9fd82ff86b8a0f167c771b4d5a563c22cb6f364cb2980ef7608f4754",
+          "literalBytes": 14,
+          "literalOffset": 0,
+          "matchOffset": 33,
+          "length": 14,
+          "segmentSha256": "1bd0074c9fd82ff86b8a0f167c771b4d5a563c22cb6f364cb2980ef7608f4754",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "523e430cbd96abcda961687a4c8e0c3b5e405bc84cb183b4875d7a31c89ee4d3"
+          }
+        },
+        {
+          "path": "codex-rs/codex-api/src/files.rs",
+          "line": 213,
+          "sourceOffset": 7084,
+          "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be",
+          "literalSha256": "230d8358dc8e8890b4c58deeb62912ee2f20357ae92a5cc861b98e68fe31acb5",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 47,
+          "length": 4,
+          "segmentSha256": "230d8358dc8e8890b4c58deeb62912ee2f20357ae92a5cc861b98e68fe31acb5",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "59c081ad3e4a5b94f4082c93d1856f3c6761966f466892dfafc356bf3b3274be"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "4d37fb0a1b91415fd13b92eb6425cf8c01debfad43747d1e018139f853a25d32",
+      "kind": "single-upstream-literal",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 5297407,
+        "length": 19,
+        "sha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/utils/cli/src/config_override.rs",
+          "line": 27,
+          "sourceOffset": 1273,
+          "sourceSha256": "72933da6860c47d32da42e7e8dfcbdf463cd365366684bea11c39af5e88c428a",
+          "literalSha256": "b2a041ec39b888babd8e76e7b0ce4478efc930b767734dbbce813a09f229f955",
+          "literalBytes": 21,
+          "literalOffset": 2,
+          "matchOffset": 0,
+          "length": 19,
+          "segmentSha256": "fbfcf2499cd34eed5d979484d3623b6205041fcb5e871be0fa19be405db5c727",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "72933da6860c47d32da42e7e8dfcbdf463cd365366684bea11c39af5e88c428a"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "8e5db4cd51bad19630bcb064b2809ee84a69efb82d62dc13db7fccb23e7d9298",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 4617692,
+        "length": 48,
+        "sha256": "6539ba536b9b56d931108d3ccf1eb85fd98aecd64329a6b7c6c27ccfbee20930"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 919,
+          "sourceOffset": 29587,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "b670eb5d70a65acdaf86aeb336aaa69b850a09ca28fc3d3cf7bb6e4fda9ce2a8",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "b670eb5d70a65acdaf86aeb336aaa69b850a09ca28fc3d3cf7bb6e4fda9ce2a8",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/rama-net-0.3.0-alpha.4/src/tls/enums.rs",
+          "line": 736,
+          "sourceOffset": 32174,
+          "sourceSha256": "c8ea6ace3cfa56d6759b011e2d790100bdde8720e5046b8e9e7c041abc98bf4d",
+          "literalSha256": "f8d210e9fca3ccf3095bf4e362c4493245052b5de4534b1030923468f9b4c88a",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 4,
+          "length": 4,
+          "segmentSha256": "f8d210e9fca3ccf3095bf4e362c4493245052b5de4534b1030923468f9b4c88a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "rama-net",
+            "version": "0.3.0-alpha.4",
+            "packageSha256": "b28ee9e1e5d39264414b71f5c33e7fbb66b382c3fac456fe0daad39cf5509933",
+            "sourceSha256": "c8ea6ace3cfa56d6759b011e2d790100bdde8720e5046b8e9e7c041abc98bf4d"
+          }
+        },
+        {
+          "path": "codex-rs/analytics/src/events.rs",
+          "line": 707,
+          "sourceOffset": 26289,
+          "sourceSha256": "c2196cfd457d2a519aeb52a8cbf0e88a973e8083ffaaa1f935b709116d2d0a70",
+          "literalSha256": "3b21278178ed3463f3bde3a35f088caf6d99ff1b2f647d9a0c2b8de599ec3dc6",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 4,
+          "segmentSha256": "3b21278178ed3463f3bde3a35f088caf6d99ff1b2f647d9a0c2b8de599ec3dc6",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "c2196cfd457d2a519aeb52a8cbf0e88a973e8083ffaaa1f935b709116d2d0a70"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/os_info-3.14.0/src/linux/lsb_release.rs",
+          "line": 53,
+          "sourceOffset": 1940,
+          "sourceSha256": "457623058e3a35d51e57bcd9596f04d7204317dc25b9783db6f52b5d33eeb4cb",
+          "literalSha256": "8a45590e8e81f2feea2448d12a38244e15f01bbea6d0c8b09f63a473f66a9a6b",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 12,
+          "length": 4,
+          "segmentSha256": "8a45590e8e81f2feea2448d12a38244e15f01bbea6d0c8b09f63a473f66a9a6b",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "os_info",
+            "version": "3.14.0",
+            "packageSha256": "e4022a17595a00d6a369236fdae483f0de7f0a339960a53118b818238e132224",
+            "sourceSha256": "457623058e3a35d51e57bcd9596f04d7204317dc25b9783db6f52b5d33eeb4cb"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/chrono-0.4.43/src/format/locales.rs",
+          "line": 76,
+          "sourceOffset": 2250,
+          "sourceSha256": "d49de3da43941c94b1108f8fe84915cc5e1c13a1f1c84fd7356f9b7c61f19242",
+          "literalSha256": "e9cf7a1ca4a760843ff30e1fbb125e6a066c63e883c58523bdbe04c9daf5dbae",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 4,
+          "segmentSha256": "e9cf7a1ca4a760843ff30e1fbb125e6a066c63e883c58523bdbe04c9daf5dbae",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "chrono",
+            "version": "0.4.43",
+            "packageSha256": "fac4744fb15ae8337dc853fee7fb3f4e48c0fbaa23d0afe49c447b4fab126118",
+            "sourceSha256": "d49de3da43941c94b1108f8fe84915cc5e1c13a1f1c84fd7356f9b7c61f19242"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 299,
+          "sourceOffset": 10297,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "abee605de71d7d42c0decc436750336a6e34e08bd6a706c44e4088fb07deee1a",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 20,
+          "length": 4,
+          "segmentSha256": "abee605de71d7d42c0decc436750336a6e34e08bd6a706c44e4088fb07deee1a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 423,
+          "sourceOffset": 14995,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "5d039a24046496d39958965ee8459ddcaa161d622d735c69dbdbd0574f7b99f8",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 24,
+          "length": 4,
+          "segmentSha256": "5d039a24046496d39958965ee8459ddcaa161d622d735c69dbdbd0574f7b99f8",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 425,
+          "sourceOffset": 15076,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "f5afa2b3773eb81b5eb8b0e5111d9945868ffb2dd5ffd4a51f144e43b730b6f4",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 28,
+          "length": 4,
+          "segmentSha256": "f5afa2b3773eb81b5eb8b0e5111d9945868ffb2dd5ffd4a51f144e43b730b6f4",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 427,
+          "sourceOffset": 15151,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "6fefe5837cd648791f24038aaee7ed5a0293b90bde41e690e22131a8c8d18f46",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 32,
+          "length": 4,
+          "segmentSha256": "6fefe5837cd648791f24038aaee7ed5a0293b90bde41e690e22131a8c8d18f46",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 483,
+          "sourceOffset": 17223,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "3fee90bb2ca5b91be93d095a832540e51113a7b24c8b97ce7f13cb7f15b065c3",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 36,
+          "length": 4,
+          "segmentSha256": "3fee90bb2ca5b91be93d095a832540e51113a7b24c8b97ce7f13cb7f15b065c3",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 486,
+          "sourceOffset": 17318,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "99e3e60f72b1c6906c8154751a344a12813e648e10394a8c5a40411ee8d1ff51",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 40,
+          "length": 4,
+          "segmentSha256": "99e3e60f72b1c6906c8154751a344a12813e648e10394a8c5a40411ee8d1ff51",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 493,
+          "sourceOffset": 17552,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "80a871681e2de3cb14c6a692047b11b8069b6034acf42f7b2933dc16e9e5b565",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 44,
+          "length": 4,
+          "segmentSha256": "80a871681e2de3cb14c6a692047b11b8069b6034acf42f7b2933dc16e9e5b565",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "b851dc1f66b241de5828ea18cb63089ba92a31ab4165b2c2a9a4ce8a351318ac",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex-exec-server",
+      "artifactSha256": "02a1a3d276cf815d42e52def87b7896f0c4aae13263bd7e45bc5e9d6ce9e8e42",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 4621388,
+        "length": 48,
+        "sha256": "3bcb48cc71bc30f4b2cbe84c1bbf04e002dcc593725fead5587caaed0dd85eff"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 920,
+          "sourceOffset": 29603,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "1caf8e22a84dd7453643b7842d4adaab91482e5a12ea7b5061e868aa38f51734",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 0,
+          "length": 4,
+          "segmentSha256": "1caf8e22a84dd7453643b7842d4adaab91482e5a12ea7b5061e868aa38f51734",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/cli/src/doctor/output.rs",
+          "line": 922,
+          "sourceOffset": 29635,
+          "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707",
+          "literalSha256": "9d8e3c88df4791b9ce2a8f1e23e3eff917de5a13ab6a7e516e299ab8ccf4392c",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 4,
+          "length": 4,
+          "segmentSha256": "9d8e3c88df4791b9ce2a8f1e23e3eff917de5a13ab6a7e516e299ab8ccf4392c",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "fc562d90c7bef3bb081aaef17cb2c960d002800c7ed4d9bf518417a6af1a7707"
+          }
+        },
+        {
+          "path": "codex-rs/app-server-client/src/remote.rs",
+          "line": 129,
+          "sourceOffset": 5118,
+          "sourceSha256": "60e1c05e70e4e4085ca3cd596980c24a08b4028757c0dc26a61ce87dd205e214",
+          "literalSha256": "cb38e0eb9fd8a49c421e60ed8a328d94ffce8bdc6bc1f4e0d686a0f0fe41175f",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 8,
+          "length": 4,
+          "segmentSha256": "cb38e0eb9fd8a49c421e60ed8a328d94ffce8bdc6bc1f4e0d686a0f0fe41175f",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "60e1c05e70e4e4085ca3cd596980c24a08b4028757c0dc26a61ce87dd205e214"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/zip-9.0.0/src/compression.rs",
+          "line": 174,
+          "sourceOffset": 6973,
+          "sourceSha256": "4fec622080fd30c94074001a75aea31dfcef7ed4cd2e0a4cb3fedd2232271b00",
+          "literalSha256": "a8957b19b83205d2aa2e7fa8e676564afca360c77761a69777ab6e7d75359d66",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 12,
+          "length": 4,
+          "segmentSha256": "a8957b19b83205d2aa2e7fa8e676564afca360c77761a69777ab6e7d75359d66",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "zip",
+            "version": "9.0.0",
+            "packageSha256": "711e8c9646791c49b7eb799a19c4ae70a9b8372ddc6a1fa4778defd1e2aa5d5e",
+            "sourceSha256": "4fec622080fd30c94074001a75aea31dfcef7ed4cd2e0a4cb3fedd2232271b00"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/opentelemetry_sdk-0.31.0/src/metrics/aggregation.rs",
+          "line": 98,
+          "sourceOffset": 4106,
+          "sourceSha256": "a9c31ea03031237cad3244f050dce531cf21bdef038c5580ef26802e7245d449",
+          "literalSha256": "c8af9ae37a48273f981bc82af63517e3a2195c4076360e73546c306a044dd38b",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 16,
+          "length": 4,
+          "segmentSha256": "c8af9ae37a48273f981bc82af63517e3a2195c4076360e73546c306a044dd38b",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "opentelemetry_sdk",
+            "version": "0.31.0",
+            "packageSha256": "e14ae4f5991976fd48df6d843de219ca6d31b01daaab2dad5af2badeded372bd",
+            "sourceSha256": "a9c31ea03031237cad3244f050dce531cf21bdef038c5580ef26802e7245d449"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/chrono-0.4.43/src/format/mod.rs",
+          "line": 77,
+          "sourceOffset": 2695,
+          "sourceSha256": "485fdb1e2a85d72114e41f15a632d0c53cc4114fd4c381014aaf91e9c2f691af",
+          "literalSha256": "4e7ba40328eee49c03ebf12bed83a10f42022b10601b9963ee299e50cbde0026",
+          "literalBytes": 4,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 20,
+          "length": 4,
+          "segmentSha256": "4e7ba40328eee49c03ebf12bed83a10f42022b10601b9963ee299e50cbde0026",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "chrono",
+            "version": "0.4.43",
+            "packageSha256": "fac4744fb15ae8337dc853fee7fb3f4e48c0fbaa23d0afe49c447b4fab126118",
+            "sourceSha256": "485fdb1e2a85d72114e41f15a632d0c53cc4114fd4c381014aaf91e9c2f691af"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode.rs",
+          "line": 659,
+          "sourceOffset": 23712,
+          "sourceSha256": "b2084dcbd4331501b9a895fd7e7575d93ff96eb661c6e6adbc8c66bb72685cde",
+          "literalSha256": "0910752535d423bfc0567d93f1ec21adf1b5ce508de95339a25bb4da1b6e9c7b",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 24,
+          "length": 4,
+          "segmentSha256": "0910752535d423bfc0567d93f1ec21adf1b5ce508de95339a25bb4da1b6e9c7b",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "b2084dcbd4331501b9a895fd7e7575d93ff96eb661c6e6adbc8c66bb72685cde"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 50,
+          "sourceOffset": 1417,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "6e8d02e187267387e960302b2aecead88a2eb52fc8f899c1cc0f0a17fc494563",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 28,
+          "length": 4,
+          "segmentSha256": "6e8d02e187267387e960302b2aecead88a2eb52fc8f899c1cc0f0a17fc494563",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 259,
+          "sourceOffset": 8836,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "c7fce3cad585a3110c96b34516df16362c99f6f32359d64ddf1a58c1710247d1",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 32,
+          "length": 4,
+          "segmentSha256": "c7fce3cad585a3110c96b34516df16362c99f6f32359d64ddf1a58c1710247d1",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 404,
+          "sourceOffset": 14257,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "265d867b5817e2a73abd1a59911e2845443d07ee8fd3d558c79c791b3dab0b95",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 36,
+          "length": 4,
+          "segmentSha256": "265d867b5817e2a73abd1a59911e2845443d07ee8fd3d558c79c791b3dab0b95",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/regex-syntax-0.8.8/src/unicode_tables/property_values.rs",
+          "line": 440,
+          "sourceOffset": 15664,
+          "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136",
+          "literalSha256": "91f5c6a3fc8da7c52da99ab38f3cf3d390a8bf6568842b2625077ec620278974",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 40,
+          "length": 4,
+          "segmentSha256": "91f5c6a3fc8da7c52da99ab38f3cf3d390a8bf6568842b2625077ec620278974",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "regex-syntax",
+            "version": "0.8.8",
+            "packageSha256": "7a2d987857b319362043e95f5353c0535c1f58eec5336fdfcf626430af7def58",
+            "sourceSha256": "ef9131ce0a575c7327ec6d466aafd8b7c25600d80c232b5a4110bbf0a5a59136"
+          }
+        },
+        {
+          "path": "registry/index.crates.io-1949cf8c6b5b557f/icu_decimal-2.2.0/src/provider.rs",
+          "line": 83,
+          "sourceOffset": 2537,
+          "sourceSha256": "dbf0b57785800096df86abebd15e9c82564f22cfc3d8acf640350d3c40aead22",
+          "literalSha256": "3582ea097a77e45fe853a947e9139a551cee899b31e4c19dc4750f9e00b5491a",
+          "literalBytes": 4,
+          "literalOffset": 0,
+          "matchOffset": 44,
+          "length": 4,
+          "segmentSha256": "3582ea097a77e45fe853a947e9139a551cee899b31e4c19dc4750f9e00b5491a",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "Cargo.lock-authenticated cached crate archive and exact source member",
+            "package": "icu_decimal",
+            "version": "2.2.0",
+            "packageSha256": "288247df2e32aa776ac54fdd64de552149ac43cb840f2761811f0e8d09719dd4",
+            "sourceSha256": "dbf0b57785800096df86abebd15e9c82564f22cfc3d8acf640350d3c40aead22"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material"
     }
   ],
   "unresolved": []

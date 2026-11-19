@@ -6,7 +6,9 @@ This staged maintenance kit is unofficial and not endorsed by OpenAI. This notic
 
 Owner-selected patch `0005-official-v8-without-sandbox.patch` uses the official pointer-compressed V8 prebuilt without V8 heap-sandbox containment. It changes the code-mode-runtime Cargo feature request, removes its UI startup sandbox requirement, and replaces the linked-sandbox assertion with a linked-engine initialization test. This weakens containment for V8 memory-corruption bugs. The candidate manifest must explicitly pin this patch and its matching native asset hashes; this staged manifest enables it.
 
-Modified by the fork maintainer in 0.167.1-p3:
+Modified by the fork maintainer in 0.167.1-p4:
 `codex-rs/tui/src/bottom_pane/chat_composer.rs` binds Alt+U to whole-draft clear
 with local history recovery and adds four behavior tests. Maintenance tooling
 requires these tests and finds draft releases through a paginated release list.
+
+Release 0.167.1-p4: maintenance publisher uses compatible paginated draft discovery and exact-input publication checks. Upstream runtime source and patches remain pinned.

@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "key": "5af17c78ea16414b068a031458d7b1c34bf485b579a8ef843a1e7c2cb4e2cdc5",
+  "inputHash": "a01f98fda09a0dbb902221cbf956b0828866954b0f6af60e160774d73693a5f4",
+  "branch": "update/5af17c78ea16",
+  "base": "fork",
+  "manifest": {
+    "schema": 1,
+    "fork": "codex",
+    "fork_version": "0.167.1-p4",
+    "upstream": {
+      "repo": "openai/codex",
+      "tag": "rust-v0.167.1",
+      "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46"
+    },
+    "patches": [
+      {
+        "file": "0001-scroll-40-percent.patch",
+        "sha256": "555a8ab95a01cc2dc3bee177fb860499cf8b177d1552e611e21228dc6877e6e1"
+      },
+      {
+        "file": "0002-scroll-40-percent-tests.patch",
+        "sha256": "ca1b9c3827e667a60b0d5c2b5b147a7100cc1c2f8b93164abaaeedf566b505d2"
+      },
+      {
+        "file": "0005-official-v8-without-sandbox.patch",
+        "sha256": "cbb5e12d957cb26e68eedb6a13b7e2297df1cd2aef290730c4ddf6242a46500f"
+      },
+      {
+        "file": "0006-composer-alt-u-clear.patch",
+        "sha256": "780221fe8eabb8774ecf276edbb69dd35531f70c82205e0f95710dea3f5af43d"
+      },
+      {
+        "file": "0007-composer-alt-u-clear-tests.patch",
+        "sha256": "00205bf538f2378d2f7789974b6b817152d3afead63c4c1193b2a78a07a39c83"
+      }
+    ],
+    "patchset_sha256": "0df4872fa87944f67f1c63e05a86615a8a10c2e62d6ae71c3992d49c7b93bee4",
+    "toolchain": "1.95.0",
+    "lockfile_sha256": "9efc26116852723f76540da85d9e4537979014f166c39494bef61e49a9cc0883",
+    "production_ready": true,
+    "target": "x86_64-unknown-linux-gnu",
+    "bins": [
+      "codex",
+      "codex-code-mode-host",
+      "codex-exec-server"
+    ],
+    "native_assets": [
+      {
+        "name": "librusty_v8_ptrcomp_release_x86_64-unknown-linux-gnu.a.gz",
+        "url": "https://github.com/denoland/rusty_v8/releases/download/v152.2.0/librusty_v8_ptrcomp_release_x86_64-unknown-linux-gnu.a.gz",
+        "sha256": "aaeba7932acdfa9ff44592d9292bf4dd63651e2abafdeb8a5952199b5901ea50"
+      },
+      {
+        "name": "src_binding_ptrcomp_release_x86_64-unknown-linux-gnu.rs",
+        "url": "https://github.com/denoland/rusty_v8/releases/download/v152.2.0/src_binding_ptrcomp_release_x86_64-unknown-linux-gnu.rs",
+        "sha256": "3e4d5fecdbe0f98a6017e69d7ca82519a77fb032c5eb5e4cdbecdd3e2ec519d5"
+      }
+    ]
+  },
+  "previousCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+  "artifactHash": "918e07c4f2395dc3ee9832f83cfe019ee5262325ecf7e313c0d7d53dfa5b1ea1",
+  "receiptHash": "0278ee15f730701b8e4e48f09a226f966d29d36680a4b1409a3e949e4a3cf38d"
+}

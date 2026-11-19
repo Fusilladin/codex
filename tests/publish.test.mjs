@@ -9,7 +9,7 @@ const fork = JSON.parse(readFileSync(new URL('../fork/manifest.json', import.met
 
 // Only synthetic commands run: no GitHub, real Git, approvals or host guard.
 function fixture(t) {
-  const scratch = '/tmp/t85/codex-altu-20261118';
+  const scratch = '/tmp/t85/publish-harden-20261118';
   mkdirSync(scratch, { recursive: true });
   const root = mkdtempSync(join(scratch, 'publish-'));
   const home = join(root, 'home');
@@ -64,12 +64,15 @@ if(command==='git') {
 } else if(args[0]==='api') {
  const route=args[1];
  if(route.endsWith('/immutable-releases')) {step='check-immutable-releases';output=JSON.stringify({enabled:true});}
- else if(route.includes('/git/ref/tags/')) {step='check-remote-tag';output=JSON.stringify({object:{type:'commit',sha:d.commit}});}
- else if(route.endsWith('/releases')&&args.includes('--paginate')&&args.includes('--slurp')) {
+ else if(route.includes('/git/ref/tags/')) {step='check-remote-tag';output=JSON.stringify({object:d.annotated?{type:'tag',sha:'c'.repeat(40)}:{type:'commit',sha:d.commit}});}
+ else if(route.includes('/git/tags/')) {step='check-remote-tag';output=JSON.stringify({object:{type:'commit',sha:d.commit}});}
+ else if(route.includes('/releases?per_page=100&page=')) {
   step='find-draft-release';
   const release={tag_name:d.pin.tag,draft:d.draft??true,assets:[d.pin.artifact,'SHA256SUMS','manifest.json'].map(name=>({name}))};
-  // The matching draft is on a later page, among unrelated drafts and published releases.
-  output=JSON.stringify([[{tag_name:'unrelated',draft:true}],d.missing?[]:[release,...(d.duplicate?[release]:[])]]);
+  const page=Number(route.split('page=').at(-1));
+  output=JSON.stringify(page===1?Array.from({length:100},(_,i)=>({tag_name:'unrelated-'+i,draft:true})):d.missing?[]:[release,...(d.duplicate?[release]:[])]);
+  if(d.invalidListing)output='{}';
+
  }
 } else if(args[0]==='release'&&args[1]==='download') {
  step='download-draft-assets';output='';
@@ -102,10 +105,12 @@ process.stdout.write(output);
 
 test('publication finds a draft on a later releases page and keeps the publication checks', t => {
   const f = fixture(t);
+  f.data.annotated = true; f.save();
   assert.equal(publishFile(f.evidence).state, 'published');
   const commands = f.commands();
-  assert.ok(commands.some(a => a[0] === 'gh' && a[1] === 'api' &&
-    a[2] === `repos/${f.data.pin.repo}/releases` && a.includes('--paginate') && a.includes('--slurp')));
+  assert.deepEqual(commands.filter(a => a[0] === 'gh' && a[1] === 'api' && a[2].includes('/releases?')).map(a=>a[2]),
+    [1,2].map(page=>`repos/${f.data.pin.repo}/releases?per_page=100&page=${page}`));
+  assert.equal(commands.some(a=>a.includes('--slurp')||a.includes('--paginate')),false);
   assert.equal(commands.some(a => a.some(v => v.includes('/releases/tags/'))), false);
   assert.ok(commands.some(a => a[0] === 'guard' && a.includes('public')));
   assert.deepEqual(commands.at(-1), ['gh', 'release', 'edit', f.data.pin.tag,
@@ -132,8 +137,8 @@ test('command failures name only a fixed step and retain the draft', t => {
 
 test('missing, duplicate and already published matching releases fail before download', t => {
   const f = fixture(t);
-  for (const change of [{ missing: true }, { duplicate: true }, { draft: false }]) {
-    Object.assign(f.data, { missing: false, duplicate: false, draft: true }, change);
+  for (const change of [{ missing: true }, { duplicate: true }, { draft: false }, { invalidListing: true }]) {
+    Object.assign(f.data, { missing: false, duplicate: false, draft: true, invalidListing: false }, change);
     f.save();
     assert.throws(() => publishFile(f.evidence), { state: 'invalid-input' });
   }
