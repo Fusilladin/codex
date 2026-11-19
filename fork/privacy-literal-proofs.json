@@ -5608,6 +5608,67 @@
       ],
       "classification": "upstream-non-secret-literal",
       "coverage": "all matched bytes accounted for; no credential material"
+    },
+    {
+      "proofSha256": "8f0dbb33efd9493cf54f1bdf4ec15ca82f71c1c00f82cc21701c0ca6bf8c4e79",
+      "kind": "adjacent-llvm-constant-fragments",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "file": "bin/codex",
+      "artifactSha256": "8147da87c0de301cf402a813cc350256e4175b176b6fb8ff75abaf87ab4babac",
+      "match": {
+        "kind": "tokenLike",
+        "offset": 11429937,
+        "length": 24,
+        "sha256": "7045819ba2c152df791972ca75da2d98edae0141c1fd11af02750213d1f1e36a"
+      },
+      "parts": [
+        {
+          "path": "codex-rs/tui/src/cli.rs",
+          "line": 70,
+          "sourceOffset": 2402,
+          "sourceSha256": "a2fa6eca759af254c9118eabbd042906d9957ffa6dc7f6d4de5a59377ca060b0",
+          "literalSha256": "e9057494e55edddc9564bb320e265ec474df2eddd7caee087315595915bdd2bc",
+          "literalBytes": 16,
+          "literalOffset": 1,
+          "matchOffset": 0,
+          "length": 15,
+          "segmentSha256": "a9337adc7dc7f782f56a83fdfb9d4c78561c8d9f79b2ddf37873a1143f93632a",
+          "emission": "llvm-constant-fragment",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "a2fa6eca759af254c9118eabbd042906d9957ffa6dc7f6d4de5a59377ca060b0"
+          }
+        },
+        {
+          "path": "codex-rs/app-server/src/request_processors/initialize_processor.rs",
+          "line": 200,
+          "sourceOffset": 8788,
+          "sourceSha256": "3074d588d6dd18067b4b0b380e4903f1176b4bc3f5d1c650d87694b437b541fd",
+          "literalSha256": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+          "literalBytes": 9,
+          "kind": "macro-stringified-identifier",
+          "literalOffset": 0,
+          "matchOffset": 15,
+          "length": 9,
+          "segmentSha256": "fe199528850a4e24c14d9ece87a07b40bdcfa5fe504c175c117b997c29259ca6",
+          "emission": "whole-literal",
+          "trust": {
+            "kind": "exact upstream Git blob",
+            "commit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+            "sourceSha256": "3074d588d6dd18067b4b0b380e4903f1176b4bc3f5d1c650d87694b437b541fd"
+          }
+        }
+      ],
+      "classification": "upstream-non-secret-literal",
+      "coverage": "all matched bytes accounted for; no credential material",
+      "evidence": {
+        "run": "https://github.com/Fusilladin/codex/actions/runs/44496953555/job/135466506232",
+        "ruleId": "token-like-sk",
+        "ruleSha256": "713b3acf0292c5e2b73328a8c6be3b73bb0a364f10174374a74e05449b12151b",
+        "referenceProofSha256": "6245857aee9cb89a73c149a64ccf11ca5ff8f8a10929d682c37725013731d00f",
+        "scope": "First reported match only; all other matches require independent proof."
+      }
     }
   ],
   "unresolved": []

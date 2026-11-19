@@ -564,6 +564,17 @@
       "classification": "upstream-non-secret-literal",
       "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
       "proofSha256": "b851dc1f66b241de5828ea18cb63089ba92a31ab4165b2c2a9a4ce8a351318ac"
+    },
+    {
+      "kind": "tokenLike",
+      "offset": 11429937,
+      "length": 24,
+      "sha256": "7045819ba2c152df791972ca75da2d98edae0141c1fd11af02750213d1f1e36a",
+      "file": "bin/codex",
+      "artifactSha256": "8147da87c0de301cf402a813cc350256e4175b176b6fb8ff75abaf87ab4babac",
+      "classification": "upstream-non-secret-literal",
+      "upstreamCommit": "0a94398fa60c4fac0e7659e4213a0a36e613dd46",
+      "proofSha256": "8f0dbb33efd9493cf54f1bdf4ec15ca82f71c1c00f82cc21701c0ca6bf8c4e79"
     }
   ]
 }

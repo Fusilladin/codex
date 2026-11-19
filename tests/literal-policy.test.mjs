@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs';
 import {exactTokenLiterals,exactOwnerLiterals,scanBytes} from '../fork/lib/canary.mjs';
 import {sha256} from '../fork/lib/manifest.mjs';
 test('exact upstream literal exception binds whole artifact, entry name, offset and match digest',()=>{
@@ -82,4 +83,34 @@ test('a proven literal never exempts an adjacent sk credential or another artifa
  assert.throws(()=>module.scanBytes(clean,{name:'bin/codex-exec-server'}),/redacted/);
  // The same public match relocated within an otherwise plausible binary fails.
  assert.throws(()=>module.scanBytes(Buffer.concat([Buffer.from([0]),clean]),options),/redacted/);
+});
+
+test('CI run 44496953555 permits only the reported upstream literal in its exact binary', () => {
+ const read = path => JSON.parse(readFileSync(new URL('../fork/' + path, import.meta.url), 'utf8'));
+ const artifactSha256 = '8147da87c0de301cf402a813cc350256e4175b176b6fb8ff75abaf87ab4babac';
+ const {entries} = read('privacy-literals.json');
+ const [entry, ...others] = entries.filter(item => item.artifactSha256 === artifactSha256);
+ assert.ok(entry);
+ assert.equal(others.length, 0);
+ const {proofSha256, ...binding} = entry;
+ assert.deepEqual(binding, {
+  kind: 'tokenLike',
+  file: 'bin/codex',
+  artifactSha256,
+  offset: 11429937,
+  length: 24,
+  sha256: '7045819ba2c152df791972ca75da2d98edae0141c1fd11af02750213d1f1e36a',
+  classification: 'upstream-non-secret-literal',
+  upstreamCommit: '0a94398fa60c4fac0e7659e4213a0a36e613dd46',
+ });
+ const {proofs} = read('privacy-literal-proofs.json');
+ const proof = proofs.find(item => item.proofSha256 === proofSha256);
+ assert.ok(proof);
+ const reference = proofs.find(item => item.proofSha256 === proof.evidence.referenceProofSha256);
+ assert.ok(reference);
+ assert.equal(reference.artifactSha256, '19949df94a2ecef97bcdd974dafdb7d27705ab11f6de9f13ce5313c6f36af122');
+ assert.deepEqual(proof.parts, reference.parts);
+ assert.equal(reference.match.sha256, binding.sha256);
+ assert.equal(reference.match.length, binding.length);
+ assert.doesNotThrow(() => scanBytes(Buffer.alloc(0)));
 });
