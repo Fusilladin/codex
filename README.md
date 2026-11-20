@@ -4,6 +4,19 @@ Not affiliated with OpenAI. Node 24, git and tar are required. Builds also need
 the pinned Rust toolchain, Cargo cache and matching V8 native assets. Nothing in
 this kit automatically changes the owner's launcher or publishes a release.
 
+## What this fork adds
+
+Compared with stock upstream Codex rust-v0.167.1 (openai/codex, commit 0a94398):
+
+- Scroll change (patches 0001 and 0002): full-page movement in the transcript pager is 2/5 of the page height, at least 1 line. Half-page and line movement are unchanged.
+- Alt+U clears the whole chat composer (patches 0006 and 0007), at any cursor position, including attachments and pending pastes. The cleared draft stays in input history, so Up recovers it. It does not send the message or interrupt a running turn. Ctrl+U keeps its line-start behavior.
+- Native V8 build (patch 0005, owner option B): uses the official pointer-compressed V8 prebuilt without its heap sandbox. This weakens containment: a V8 memory-corruption bug is less contained than in stock Codex.
+- Local build and packaging: builds offline with the pinned Rust 1.95.0 toolchain and checks package size and privacy before packaging.
+- Install and rollback: the original Codex is referenced and never edited; new versions go in fresh directories and are switched by atomic symlinks; rollback is explicit.
+- Release checks: release installs require GitHub attestation verification and an isolated probe. CI scripts build candidates and releases. Automatic branch, PR and draft writes stay off.
+- Publishing and installing into your real HOME are owner actions. Agents do not publish or switch Codex.
+- Upstream LICENSE and NOTICE are kept.
+
 The historical source pin is rust-v0.167.1,
 0a94398fa60c4fac0e7659e4213a0a36e613dd46, Rust 1.95.0. The staged manifest
 pins the validated workspace lock and native assets; its exact-input rebuild
