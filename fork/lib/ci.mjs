@@ -13,6 +13,16 @@ import { packageStage } from './package.mjs';
 import { candidatePayload } from './github.mjs';
 
 const kit = resolve(dirname(fileURLToPath(import.meta.url)), '../..');
+export function sourceToolchain(text) {
+  const channels = [...text.matchAll(/^\s*channel\s*=\s*"([^"]+)"\s*(?:#.*)?$/gm)];
+  if (channels.length !== 1 || !/^\d+\.\d+\.\d+$/.test(channels[0][1])) throw invalid('Invalid source toolchain pin');
+  return channels[0][1];
+}
+export function candidateToolchain(text, discovered) {
+  const toolchain = sourceToolchain(text);
+  if (toolchain !== discovered) throw invalid('Discovered source toolchain mismatch');
+  return toolchain;
+}
 export async function discover({ manifest, repo, fetch: fetcher }) {
   if (!/^[A-Za-z0-9][A-Za-z0-9-]*\/[A-Za-z0-9][A-Za-z0-9_.-]*$/.test(repo ?? '') || repo === 'openai/codex') throw invalid('Explicit fork repository required');
   const release = await latestStable({ fixture: null, fetch: async url => {
@@ -20,7 +30,12 @@ export async function discover({ manifest, repo, fetch: fetcher }) {
     if (r.status !== 200) throw invalid('Upstream discovery failed'); return r.json();
   } });
   if (release.tag === manifest.upstream.tag && release.commit !== manifest.upstream.commit) throw invalid('Pinned upstream tag moved');
-  const key = candidateKey(manifest, release.commit), branch = `update/${key.slice(0, 12)}`;
+  const toolchainResponse = await fetcher(`https://api.github.com/repos/openai/codex/contents/codex-rs/rust-toolchain.toml?ref=${release.commit}`, { redirect: 'error', signal: AbortSignal.timeout(30000), headers: { Accept: 'application/vnd.github+json' } });
+  if (toolchainResponse.status !== 200) throw invalid('Upstream toolchain lookup failed');
+  const toolchainFile = await toolchainResponse.json();
+  if (toolchainFile.encoding !== 'base64' || typeof toolchainFile.content !== 'string') throw invalid('Upstream toolchain content invalid');
+  const toolchain = sourceToolchain(Buffer.from(toolchainFile.content, 'base64').toString('utf8'));
+  const key = candidateKey({ ...manifest, toolchain }, release.commit), branch = `update/${key.slice(0, 12)}`;
   const historyResponse = await fetcher(`https://api.github.com/repos/${repo}/pulls?state=all&base=fork&per_page=100`, { redirect: 'error', signal: AbortSignal.timeout(30000) });
   if (historyResponse.status !== 200) throw invalid('Candidate history lookup failed');
   const history = await historyResponse.json();
@@ -38,7 +53,7 @@ export async function discover({ manifest, repo, fetch: fetcher }) {
   }
   const existing = await fetcher(`https://api.github.com/repos/${repo}/git/ref/heads/${branch}`, { redirect: 'error', signal: AbortSignal.timeout(30000) });
   if (![200, 404].includes(existing.status)) throw invalid('Remote candidate lookup failed');
-  return { ...release, key, build: existing.status === 404 && (release.commit !== manifest.upstream.commit || release.tag !== manifest.upstream.tag) };
+  return { ...release, toolchain, key, build: existing.status === 404 && (release.commit !== manifest.upstream.commit || release.tag !== manifest.upstream.tag) };
 }
 export async function nativeAssets({ assets, directory, fetch: fetcher }) {
   if (!Array.isArray(assets) || assets.length !== 2 || new Set(assets.map(a => a.name)).size !== 2 || !assets.some(a => a.name.startsWith('src_binding')) || !assets.some(a => a.name.startsWith('librusty_v8'))) throw invalid('Pinned V8 binding and library assets required');
@@ -68,7 +83,7 @@ export async function ciMain(args) {
   if (command === 'discover') {
     const found = await discover({ manifest: m, repo: process.env.GITHUB_REPOSITORY, fetch });
     if (!process.env.GITHUB_OUTPUT) throw invalid('Actions output required');
-    writeFileSync(process.env.GITHUB_OUTPUT, `commit=${found.commit}\ntag=${found.tag}\nbuild=${found.build}\n`, { flag: 'a' }); return found;
+    writeFileSync(process.env.GITHUB_OUTPUT, `commit=${found.commit}\ntag=${found.tag}\ntoolchain=${found.toolchain}\nbuild=${found.build}\n`, { flag: 'a' }); return found;
   }
   if (!['candidate', 'release'].includes(command)) throw invalid('Unknown CI command');
   const source = realpathSync(join(kit, '.work/upstream')), stateRoot = join(kit, '.work/ci-state');
@@ -76,7 +91,8 @@ export async function ciMain(args) {
   let manifest = m;
   if (command === 'candidate') {
     const release = { tag: process.env.UPSTREAM_TAG, commit: process.env.UPSTREAM_COMMIT };
-    const result = prepare({ manifest: { ...m, native_assets: assets }, release, source, patchDir: join(kit, 'fork/patches'), stateRoot });
+    const toolchain = candidateToolchain(readFileSync(join(source, 'codex-rs/rust-toolchain.toml'), 'utf8'), process.env.UPSTREAM_TOOLCHAIN);
+    const result = prepare({ manifest: { ...m, toolchain, native_assets: assets }, release, source, patchDir: join(kit, 'fork/patches'), stateRoot });
     if (result.state !== 'prepared') throw invalid('Candidate preparation refused');
     manifest = readJSON(join(stateRoot, 'candidates', `${result.key}.json`)).manifest;
   } else {

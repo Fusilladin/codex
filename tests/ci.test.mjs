@@ -2,18 +2,20 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import { join } from 'node:path';
 import { readFileSync } from 'node:fs';
-import { discover, nativeAssets, ciMain, reviewedReleasePayload } from '../fork/lib/ci.mjs';
+import { discover, nativeAssets, ciMain, reviewedReleasePayload, sourceToolchain, candidateToolchain } from '../fork/lib/ci.mjs';
 import { sha256, candidateKey, inputRevision } from '../fork/lib/manifest.mjs';
 import { candidatePayload } from '../fork/lib/github.mjs';
 import { temp, manifest } from './helpers.mjs';
 
 test('CI discovery resolves stable identity and suppresses existing candidates through injected HTTP', async () => {
   const m = manifest('1'.repeat(40)); let seen = false;
-  const fetcher = async url => url.endsWith('/releases/latest') ? new Response(JSON.stringify({ tag_name: 'rust-v0.169.0', draft: false, prerelease: false })) : url.includes('/pulls?') ? new Response('[]') : url.includes('/commits/') ? new Response(JSON.stringify({ sha: '2'.repeat(40) })) : new Response('', { status: seen ? 200 : 404 });
-  const first = await discover({ manifest: m, repo: 'fixture-owner/codex', fetch: fetcher }); assert.equal(first.build, true);
+  const fetcher = async url => url.endsWith('/releases/latest') ? new Response(JSON.stringify({ tag_name: 'rust-v0.169.0', draft: false, prerelease: false })) : url.includes('rust-toolchain.toml?') ? new Response(JSON.stringify({ encoding: 'base64', content: Buffer.from('[toolchain]\nchannel = \"1.99.1\"\n').toString('base64') })) : url.includes('/pulls?') ? new Response('[]') : url.includes('/commits/') ? new Response(JSON.stringify({ sha: '2'.repeat(40) })) : new Response('', { status: seen ? 200 : 404 });
+  const first = await discover({ manifest: m, repo: 'fixture-owner/codex', fetch: fetcher }); assert.equal(first.build, true); assert.equal(first.toolchain, '1.99.1');
+  assert.equal(first.key, candidateKey({ ...m, toolchain: '1.99.1' }, '2'.repeat(40)));
+  assert.notEqual(first.key, candidateKey(m, '2'.repeat(40)));
   seen = true; assert.equal((await discover({ manifest: m, repo: 'fixture-owner/codex', fetch: fetcher })).build, false);
   const prior = { ...m, fork_version: '0.169.0-p1', upstream: { ...m.upstream, tag: 'rust-v0.169.0', commit: '4'.repeat(40) } }, key = candidateKey(prior);
-  const moved = async url => url.includes('/pulls?') ? new Response(JSON.stringify([{ head: { repo: { full_name: 'fixture-owner/codex' }, ref: `update/${key.slice(0, 12)}` } }])) : url.includes('/contents/') ? new Response(JSON.stringify({ content: Buffer.from(JSON.stringify({ key, manifest: prior })).toString('base64') })) : fetcher(url);
+  const moved = async url => url.includes('/pulls?') ? new Response(JSON.stringify([{ head: { repo: { full_name: 'fixture-owner/codex' }, ref: `update/${key.slice(0, 12)}` } }])) : url.includes('/contents/fork/candidate.json') ? new Response(JSON.stringify({ content: Buffer.from(JSON.stringify({ key, manifest: prior })).toString('base64') })) : fetcher(url);
   await assert.rejects(discover({ manifest: m, repo: 'fixture-owner/codex', fetch: moved }), /tag moved/);
   const old = process.env.GITHUB_ACTIONS;
   try { delete process.env.GITHUB_ACTIONS; await assert.rejects(ciMain(['candidate']), /not a local build mode/); }
@@ -40,4 +42,12 @@ test('release rebuild preserves reviewed candidate provenance while comparing ex
   assert.equal(reviewedReleasePayload({ merged, rebuilt }), merged);
   assert.notEqual(merged.receiptHash, rebuilt.receiptHash);
   assert.throws(() => reviewedReleasePayload({ merged, rebuilt: { ...rebuilt, artifactHash: '7'.repeat(64) } }), /differs/);
+});
+
+test('candidate source toolchain rejects invalid and ambiguous pins', () => {
+  assert.equal(candidateToolchain('[toolchain]\nchannel = "1.99.1"\n', '1.99.1'), '1.99.1');
+  assert.throws(() => candidateToolchain('[toolchain]\nchannel = "1.99.1"\n', '1.95.0'), /toolchain mismatch/);
+  for (const text of ['', 'channel = "nightly"', 'channel = "1.95.0"\nchannel = "1.99.1"']) {
+    assert.throws(() => sourceToolchain(text), /Invalid source toolchain pin/);
+  }
 });

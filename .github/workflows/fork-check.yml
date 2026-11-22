@@ -38,12 +38,15 @@ jobs:
           persist-credentials: false
       - name: Install pinned Rust toolchain
         if: steps.discover.outputs.build == 'true'
-        run: rustup toolchain install "$(node --input-type=module -e 'import {readManifest} from "./fork/lib/manifest.mjs"; console.log(readManifest("./fork/manifest.json").toolchain)')" --profile minimal
+        env:
+          UPSTREAM_TOOLCHAIN: ${{ steps.discover.outputs.toolchain }}
+        run: rustup toolchain install "$UPSTREAM_TOOLCHAIN" --profile minimal
       - name: Build, finalize, rebuild and package exact candidate
         if: steps.discover.outputs.build == 'true'
         env:
           UPSTREAM_TAG: ${{ steps.discover.outputs.tag }}
           UPSTREAM_COMMIT: ${{ steps.discover.outputs.commit }}
+          UPSTREAM_TOOLCHAIN: ${{ steps.discover.outputs.toolchain }}
           P85_NATIVE_ASSETS: ${{ vars.P85_NATIVE_ASSETS }}
         run: node fork/lib/ci.mjs candidate
       - uses: actions/upload-artifact@ea165f8d65b6e75b540449e92b4886f43607fa02 # v4
